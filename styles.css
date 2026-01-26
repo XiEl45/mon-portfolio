@@ -89,14 +89,17 @@ header {
 
 /* Hero Section */
 .hero {
-    min-height: 60vh; /* Changed from height: 100vh to reduce gap */
+    min-height: 40vh; /* Reduced from 60vh */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 6rem 1rem 2rem; /* Added top padding for header space */
+    padding: 6rem 1rem 0; /* Reduced bottom padding */
     background-color: var(--bg-color);
+    position: relative; /* For shapes */
+    overflow: hidden; /* Contain shapes */
 }
+
 
 .hero-content h1 {
     font-size: 3rem;
@@ -306,17 +309,33 @@ h2::after {
     gap: 2rem;
 }
 
+/* Make the whole card clickable */
 .project-card {
     background-color: var(--secondary-bg);
     padding: 2rem;
     border-radius: 10px;
     transition: transform 0.3s ease;
     border: 1px solid transparent;
+    position: relative; /* Essential for stretched-link */
 }
+
+.project-card a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+/* Ensure other interactive elements inside (like tags if any) are above the stretched link if needed (here we don't have conflicting links) */
+/* If we had other links, we would need to give them z-index: 2 and position: relative */
 
 .project-card:hover {
     transform: translateY(-5px);
     border-color: var(--accent-color);
+    cursor: pointer;
 }
 
 .project-card h3 {
@@ -377,6 +396,8 @@ footer {
 .page-section {
     padding-top: 80px; /* Reduced from 100px */
     min-height: 80vh;
+    position: relative;
+    overflow: hidden;
 }
 
 .nav-links a.active {
@@ -399,19 +420,21 @@ footer {
 }
 
 .contact-item {
-    font-size: 1.2rem;
+    font-size: 1.3rem; /* Adjusted from 1.5rem */
     color: var(--white);
-    padding: 1rem 2rem;
+    padding: 1rem 2rem; /* Adjusted padding */
     border: 1px solid var(--accent-color);
     border-radius: 5px;
     width: 100%;
-    max-width: 400px;
+    max-width: 450px; /* Adjusted max-width */
     transition: all 0.3s ease;
-    cursor: pointer; /* Explicitly set cursor */
-    display: flex; /* Center content if needed */
+    cursor: pointer;
+    display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none; /* Ensure no underline by default */
+    text-decoration: none;
+    background: none; /* Reset button default */
+    font-family: inherit; /* Inherit font */
 }
 
 .contact-item:hover {
@@ -753,4 +776,87 @@ footer {
 
 .copy-feedback.visible {
     opacity: 1;
+}
+
+/* Contact Page Shapes */
+.contact-page {
+    position: relative;
+    overflow: hidden;
+}
+
+.shapes-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.contact-content {
+    position: relative;
+    z-index: 1;
+}
+
+.shape {
+    position: absolute;
+}
+
+.shape-top-right {
+    top: -100px;
+    right: -100px;
+    width: 60%;
+    max-width: 600px;
+    height: auto;
+    opacity: 0.8;
+}
+
+.shape-bottom-left {
+    bottom: -50px;
+    left: -50px;
+    width: 50%;
+    max-width: 500px;
+    height: auto;
+    opacity: 0.9;
+}
+
+.hero-contact-options {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    color: var(--white);
+    background-color: rgba(27, 38, 59, 0.8);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.hero-btn:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.hero-btn i {
+    font-size: 1.1rem;
+}
+
+.shape-bottom-right {
+    bottom: -50px;
+    right: -50px;
+    width: 40%;
+    max-width: 400px;
+    height: auto;
+    opacity: 0.8;
 }
