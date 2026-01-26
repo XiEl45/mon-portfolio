@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets - Alexis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Alexis.</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="projects.html" class="active">Projets</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="projects page-section">
+            <div class="container">
+                <h2>Mes Projets</h2>
+
+                <div class="project-category">
+                    <h3>Création numérique et Audiovisuel</h3>
+                    <div class="project-grid">
+                        <div class="project-card">
+                            <div class="project-thumbnail">
+                                <img src="images/Composition 1_00045.png" alt="Clip de musique">
+                            </div>
+                            <h3><a href="projects/project-clip.html">Clip de musique</a></h3>
+                            <p>Ce projet est un clip de musique réalisé dans le cadre d'un cours de création numérique.
+                            </p>
+                            <p class="tech-stack"><strong>Outils:</strong> After Effects, Photoshop</p>
+                            <div class="project-links">
+                                <a href="projects/project-clip.html" class="btn-link">Voir la vidéo</a>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-thumbnail">
+                                <img src="images/clip_iut.png" alt="Clip IUT">
+                            </div>
+                            <h3><a href="projects/project-clip-iut.html">Clip de présentation IUT</a></h3>
+                            <p>Réalisation d'un clip promotionnel pour présenter l'IUT et sa vie étudiante.</p>
+                            <p class="tech-stack"><strong>Outils:</strong> Premiere Pro, After Effects</p>
+                            <div class="project-links">
+                                <a href="projects/project-clip-iut.html" class="btn-link">Voir le projet</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-category">
+                    <h3>Communication</h3>
+                    <div class="project-grid">
+                        <div class="project-card">
+                            <div class="project-thumbnail">
+                                <img src="images/Logo_emblematique-03.png" alt="Description">
+                            </div>
+                            <h3><a href="projects/project-soirée-hypnose.html">Visuel de la Soirée Hypnose</a></h3>
+                            <p>Création de l'affiche et du flyers pour la Soirée Hypnose avec un fond caritatif</p>
+                            <p class="tech-stack"><strong>Outils:</strong> Photoshop, Illustrator</p>
+                            <div class="project-links">
+                                <a href="projects/project-soirée-hypnose.html" class="btn-link">Voir le projet</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-category">
+                    <h3>Photographie</h3>
+                    <div class="project-grid">
+                        <div class="project-card">
+                            <div class="project-thumbnail">
+                                <img src="images/Photo/Chat/IMG_0940.jpg" alt="Photographie animalière">
+                            </div>
+                            <h3><a href="projects/project-photo.html">Photographie animalière</a></h3>
+                            <p>Série de photos d'un chat lors d'une sortie entre amis
+                            </p>
+                            <p class="tech-stack"><strong>Outils:</strong> Lightroom, Photoshop</p>
+                            <div class="project-links">
+                                <a href="projects/project-photo.html" class="btn-link">Voir la galerie</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#" class="email-trigger">Email</a>
+                <a href="https://www.linkedin.com/in/alexis-carpentier-26b0a43a5/" target="_blank">LinkedIn</a>
+                <a href="https://instagram.com/crpt.alexis" target="_blank">Instagram</a>
+            </div>
+            <p>&copy; 2025 Alexis. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Retour en haut">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Email Modal -->
+    <div id="email-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h3 class="modal-title">Me contacter</h3>
+            <div class="copy-container">
+                <input type="text" value="alexiscarpentier62@gmail.com" readonly class="email-input">
+                <button class="copy-btn">Copier</button>
+            </div>
+            <p class="copy-feedback">Email copié !</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

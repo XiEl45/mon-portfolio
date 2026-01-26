@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Alexis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Alexis</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Accueil</a></li>
+                <li><a href="projects.html">Projets</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero fade-in-section">
+            <div class="hero-content">
+                <h1>Alexis</h1>
+                <h2>Étudiant en création numérique</h2>
+            </div>
+        </section>
+
+        <section id="about" class="about page-section fade-in-section">
+            <div class="container">
+                <h2>À Propos de Moi</h2>
+                <div class="about-content">
+                    <p class="bio">
+                        Passionné par la création numérique, je suis un étudiant créatif.
+                        <br>
+                        J'aime donner vie aux idées à travers le mouvement, l'image et le son.
+                        <br>
+                        Mon objectif est de créer des contenus visuels impactants et mémorables.
+                    </p>
+
+                    <div class="skills-container">
+                        <div class="skills-section">
+                            <h3>Compétences</h3>
+                            <ul>
+                                <li>Infographie (Création de visuel, de logo)</li>
+                                <li>Audiovisuel (Prise de vidéo, prise de son, éclairage et motion design)</li>
+                                <li>Photographie (Prise de vue, retouche)</li>
+                            </ul>
+                        </div>
+
+                        <div class="software-section">
+                            <h3>Logiciels</h3>
+                            <div class="software-grid">
+                                <div class="software-item" title="Adobe Photoshop">
+                                    <img src="images/Adobe_Photoshop_CC_icon.svg.png" alt="Photoshop">
+                                    <span>Photoshop</span>
+                                </div>
+                                <div class="software-item" title="Adobe Illustrator">
+                                    <img src="images/Adobe_Illustrator_CC_icon.svg.png" alt="Illustrator">
+                                    <span>Illustrator</span>
+                                </div>
+                                <div class="software-item" title="Adobe Premiere Pro">
+                                    <img src="images/Adobe_Premiere_Pro_CC_icon.svg.png" alt="Premiere Pro">
+                                    <span>Premiere Pro</span>
+                                </div>
+                                <div class="software-item" title="Adobe After Effects">
+                                    <img src="images/Adobe_After_Effects_CC_icon.svg.png" alt="After Effects">
+                                    <span>After Effects</span>
+                                </div>
+                                <div class="software-item" title="Adobe Lightroom">
+                                    <img src="images/Adobe_Photoshop_Lightroom_CC_logo.svg.png" alt="Lightroom">
+                                    <span>Lightroom</span>
+                                </div>
+                                <div class="software-item" title="Microsoft One/Word">
+                                    <img src="images/Microsoft_Office_Word_(2025–present).svg.png" alt="Word">
+                                    <span>Word</span>
+                                </div>
+                                <div class="software-item" title="Microsoft PowerPoint">
+                                    <img src="images/Microsoft_Office_PowerPoint_(2025–present).svg.png"
+                                        alt="PowerPoint">
+                                    <span>PowerPoint</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem;">
+                        <a href="CV.pdf" download class="cta-button"
+                            style="background-color: transparent; border: 1px solid var(--accent-color);">Télécharger
+                            mon CV</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#" class="email-trigger">Email</a>
+                <a href="https://www.linkedin.com/in/alexis-carpentier-26b0a43a5/" target="_blank">LinkedIn</a>
+                <a href="https://instagram.com/crpt.alexis" target="_blank">Instagram</a>
+            </div>
+            <p>&copy; 2025 Alexis. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Retour en haut">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Email Modal -->
+    <div id="email-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h3 class="modal-title">Me contacter</h3>
+            <div class="copy-container">
+                <input type="text" value="alexiscarpentier62@gmail.com" readonly class="email-input">
+                <button class="copy-btn">Copier</button>
+            </div>
+            <p class="copy-feedback">Email copié !</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
