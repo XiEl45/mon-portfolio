@@ -17,10 +17,11 @@
         <nav class="navbar">
             <div class="logo">Alexis<span>.</span></div>
             <ul class="nav-links">
-                <li><a href="#home" class="active">Status / Home</a></li>
-                <li><a href="#projects">Quests / Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#about">Lore / About</a></li>
+                <li><a href="#home" data-i18n="nav_home">Status / Home</a></li>
+                <li><a href="#projects" data-i18n="nav_projects">Quests / Projects</a></li>
+                <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+                <li><a href="#about" data-i18n="nav_about">Lore / About</a></li>
+                <li><button id="lang-toggle" class="lang-btn">EN</button></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -38,51 +39,58 @@
                     style="display: flex; align-items: center; border-bottom: 1px solid var(--accent-dim); padding-bottom: 2rem; margin-bottom: 2rem; gap: 2rem; flex-wrap: wrap;">
 
                     <!-- Profile Frame with Level -->
-                    <div class="profile-frame"
-                        style="position: relative; width: 220px; height: 220px; border: 2px solid var(--accent-color); padding: 5px; border-radius: 5px;">
+                    <div class="profile-frame profile-frame-purple"
+                        style="position: relative; width: 220px; height: 220px; border: 2px solid var(--purple-color); padding: 5px; border-radius: 5px;">
                         <img src="images/AlexisC.jpg" alt="Player Avatar"
                             style="width: 100%; height: 100%; object-fit: cover; background: #1a1a1a;"
-                            onerror="this.src='https://ui-avatars.com/api/?name=Alexis+C&background=0D8ABC&color=fff&size=200'">
+                            onerror="this.src='https://ui-avatars.com/api/?name=Alexis+C&background=bf00ff&color=fff&size=200'">
 
                         <!-- Level Badge -->
-                        <div class="level-badge"
-                            style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #000; border: 1px solid var(--accent-color); color: var(--accent-color); padding: 2px 10px; font-family: var(--font-heading); font-size: 0.8rem;">
+                        <div class="level-badge level-badge-purple"
+                            style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #000; border: 1px solid var(--purple-color); color: var(--purple-color); padding: 2px 10px; font-family: var(--font-heading); font-size: 0.8rem;">
                             LVL. 99
                         </div>
                     </div>
 
                     <div class="status-info" style="text-align: left;">
-                        <span class="hero-subtitle">SYSTEM ALERT</span>
+                        <span class="hero-subtitle" data-i18n="hero_status">STATUS</span>
                         <h1>Alexis Carpentier</h1>
                         <p class="system-msg" style="margin: 0; border: none; padding: 0;">
-                            JOB: MOTION DESIGNER<br>
-                            TITLE: THE VISUALIZOR
+                            <span data-i18n="hero_job">JOB: MOTION DESIGNER</span><br>
+                            <span data-i18n="hero_title">TITLE: THE VISUALIZOR</span>
                         </p>
 
                         <!-- XP Bar -->
                         <div class="xp-container" style="margin-top: 1rem; width: 100%; max-width: 300px;">
                             <div
                                 style="display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-secondary); margin-bottom: 5px; font-family: var(--font-ui);">
-                                <span>EXP</span>
+                                <span data-i18n="hero_exp">EXP</span>
                                 <span>89.5%</span>
                             </div>
                             <div class="xp-bar"
                                 style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
                                 <div class="xp-fill"
-                                    style="height: 100%; width: 89.5%; background: var(--accent-color); box-shadow: 0 0 10px var(--accent-color);">
+                                    style="height: 100%; width: 89.5%; background: var(--ui-purple); box-shadow: 0 0 10px var(--ui-purple);">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <a href="#projects" class="cta-button">ENTER DUNGEON</a>
+                <a href="#projects" class="cta-button" data-i18n="hero_enter">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    ENTER DUNGEON
+                </a>
             </div>
         </section>
 
         <section id="projects" class="projects page-section fade-in-section">
             <div class="container">
-                <h2>Instance Dungeons <span class="subtitle">My Projects</span></h2>
+                <h2><span data-i18n="sect_projects_title">Instance Dungeons</span> <span class="subtitle"
+                        data-i18n="sect_projects_subtitle">My Projects</span></h2>
 
                 <div class="project-grid">
                     <!-- Headlock Motion Design -->
@@ -94,10 +102,13 @@
                         <div class="project-info">
                             <div
                                 style="font-size: 0.7rem; color: #ff3333; font-family: var(--font-heading); margin-bottom: 5px;">
-                                DIFFICULTY: S-RANK</div>
-                            <h3><a href="projects/project-headlock.html">Headlock Edit</a></h3>
+                                <span data-i18n="project_difficulty">DIFFICULTY:</span> S-RANK
+                            </div>
+                            <h3><a href="projects/project-headlock.html" data-i18n="project_headlock">Headlock Edit</a>
+                            </h3>
                             <p class="tech-stack">After Effects</p>
-                            <p class="project-desc">Rhythmic visual synchronization.</p>
+                            <p class="project-desc" data-i18n="project_headlock_desc">Rhythmic visual synchronization.
+                            </p>
                         </div>
                         <a href="projects/project-headlock.html" class="stretched-link"></a>
                     </div>
@@ -110,10 +121,11 @@
                         <div class="project-info">
                             <div
                                 style="font-size: 0.7rem; color: #d400ff; font-family: var(--font-heading); margin-bottom: 5px;">
-                                DIFFICULTY: A-RANK</div>
-                            <h3><a href="projects/project-clip.html">Music video</a></h3>
+                                <span data-i18n="project_difficulty">DIFFICULTY:</span> A-RANK
+                            </div>
+                            <h3><a href="projects/project-clip.html" data-i18n="project_clip">Music video</a></h3>
                             <p class="tech-stack">After Effects, Photoshop</p>
-                            <p class="project-desc">Video production with VFX.</p>
+                            <p class="project-desc" data-i18n="project_clip_desc">Video production with VFX.</p>
                         </div>
                         <a href="projects/project-clip.html" class="stretched-link"></a>
                     </div>
@@ -125,10 +137,13 @@
                         <div class="project-info">
                             <div
                                 style="font-size: 0.7rem; color: #00d4ff; font-family: var(--font-heading); margin-bottom: 5px;">
-                                DIFFICULTY: B-RANK</div>
-                            <h3><a href="projects/project-clip-iut.html">Academy Promotion</a></h3>
+                                <span data-i18n="project_difficulty">DIFFICULTY:</span> B-RANK
+                            </div>
+                            <h3><a href="projects/project-clip-iut.html" data-i18n="project_clip_iut">Academy
+                                    Promotion</a></h3>
                             <p class="tech-stack">Premiere Pro, After Effects</p>
-                            <p class="project-desc">Student life promotional video.</p>
+                            <p class="project-desc" data-i18n="project_clip_iut_desc">Student life promotional video.
+                            </p>
                         </div>
                         <a href="projects/project-clip-iut.html" class="stretched-link"></a>
                     </div>
@@ -141,10 +156,12 @@
                         <div class="project-info">
                             <div
                                 style="font-size: 0.7rem; color: #00ff44; font-family: var(--font-heading); margin-bottom: 5px;">
-                                DIFFICULTY: C-RANK</div>
-                            <h3><a href="projects/project-soirée-hypnose.html">Visual of the hypnosis evening</a></h3>
+                                <span data-i18n="project_difficulty">DIFFICULTY:</span> C-RANK
+                            </div>
+                            <h3><a href="projects/project-soirée-hypnose.html" data-i18n="project_hypnose">Visual of the
+                                    hypnosis evening</a></h3>
                             <p class="tech-stack">Photoshop, Illustrator</p>
-                            <p class="project-desc">Charity event visual identity.</p>
+                            <p class="project-desc" data-i18n="project_hypnose_desc">Charity event visual identity.</p>
                         </div>
                         <a href="projects/project-soirée-hypnose.html" class="stretched-link"></a>
                     </div>
@@ -157,10 +174,12 @@
                         <div class="project-info">
                             <div
                                 style="font-size: 0.7rem; color: #ffffff; font-family: var(--font-heading); margin-bottom: 5px;">
-                                DIFFICULTY: E-RANK</div>
-                            <h3><a href="projects/project-photo.html">Animal photography</a></h3>
+                                <span data-i18n="project_difficulty">DIFFICULTY:</span> E-RANK
+                            </div>
+                            <h3><a href="projects/project-photo.html" data-i18n="project_photo">Animal photography</a>
+                            </h3>
                             <p class="tech-stack">Lightroom, Photoshop</p>
-                            <p class="project-desc">Artistic photography series.</p>
+                            <p class="project-desc" data-i18n="project_photo_desc">Artistic photography series.</p>
                         </div>
                         <a href="projects/project-photo.html" class="stretched-link"></a>
                     </div>
@@ -168,17 +187,24 @@
             </div>
 
             <div style="text-align: center; margin-top: 3rem;">
-                <a href="projects.html" class="cta-button">SEE ALL QUESTS</a>
+                <a href="projects.html" class="cta-button" data-i18n="see_all_quests">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    SEE ALL QUESTS
+                </a>
             </div>
             </div>
         </section>
 
         <section id="skills" class="skills page-section fade-in-section">
             <div class="container">
-                <h2>Active Skills <span class="subtitle">Technical skills</span></h2>
+                <h2><span data-i18n="sect_skills_title">Active Skills</span> <span class="subtitle"
+                        data-i18n="sect_skills_subtitle">Technical skills</span></h2>
                 <div class="skills-wrapper">
                     <div class="skills-column">
-                        <h3>Post-Production</h3>
+                        <h3 data-i18n="skill_post_prod">Post-Production</h3>
                         <div class="tech-grid">
                             <div class="tech-item" title="Adobe After Effects">
                                 <img src="images/Adobe_After_Effects_CC_icon.svg.png" alt="AE">
@@ -196,7 +222,7 @@
                     </div>
 
                     <div class="skills-column">
-                        <h3>Graphic Design</h3>
+                        <h3 data-i18n="skill_graphic">Graphic Design</h3>
                         <div class="tech-grid">
                             <div class="tech-item" title="Adobe Photoshop">
                                 <img src="images/Adobe_Photoshop_CC_icon.svg.png" alt="PS">
@@ -214,25 +240,40 @@
 
         <section id="about" class="about page-section fade-in-section">
             <div class="container">
-                <h2>Player Logs <span class="subtitle">About Me</span></h2>
+                <h2><span data-i18n="sect_about_title">Player Logs</span> <span class="subtitle"
+                        data-i18n="sect_about_subtitle">About Me</span></h2>
                 <div class="about-content">
                     <p class="bio-text">
-                        "I reawaken ideas through motion and imagery."
+                        <span data-i18n="about_bio">"I reawaken ideas through motion and imagery."</span>
                         <br><br>
-                        <span class="system-msg">> SYSTEM: Player seeks to create impactful visual experiences.</span>
+                        <span class="system-msg" data-i18n="about_system">> SYSTEM: Player seeks to create impactful
+                            visual experiences.</span>
                     </p>
                     <div style="margin-top: 2rem;">
-                        <a href="CV.pdf" download class="cta-button">DOWNLOAD DATA</a>
+                        <a href="CV.pdf" download class="cta-button" data-i18n="download_cv">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            DOWNLOAD DATA
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="contact" style="text-align: center; padding: 4rem 1rem;">
-            <p class="system-msg" style="margin-bottom: 2rem; font-size: 1.2rem;">SUMMON THE SHADOW MONARCH? <span
-                    class="subtitle" style="display:inline; font-size: 1rem;">(CONTACT)</span></p>
-            <a href="mailto:alexiscarpentier62@gmail.com" class="cta-button"
-                style="font-size: 1.5rem; border-width: 2px;">ARISE</a>
+            <p class="system-msg" style="margin-bottom: 2rem; font-size: 1.2rem;"><span data-i18n="contact_msg">SUMMON
+                    THE SHADOW MONARCH?</span> <span class="subtitle" style="display:inline; font-size: 1rem;"
+                    data-i18n="contact_sub">(CONTACT)</span></p>
+            <a href="mailto:alexiscarpentier62@gmail.com" class="cta-button" style="font-size: 1.5rem;"
+                data-i18n="contact_btn">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                ARISE
+            </a>
         </section>
 
     </main>
@@ -241,14 +282,18 @@
         <div class="container">
             <div class="social-links-footer">
                 <a href="https://instagram.com/crpt.alexis" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
                 <a href="mailto:alexiscarpentier62@gmail.com"><i class="fas fa-envelope"></i></a>
             </div>
-            <p>&copy; 2026 Alexis Carpentier. SYSTEM ONLINE.</p>
+            <p>&copy; 2026 Alexis Carpentier. <span data-i18n="footer_system">SYSTEM ONLINE.</span></p>
         </div>
     </footer>
 
-    <button id="back-to-top" title="Retour en haut">
+    <button id="back-to-top" title="Retour en haut" class="cta-button"
+        style="padding: 0; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 

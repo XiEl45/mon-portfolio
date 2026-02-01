@@ -16,8 +16,9 @@
         <nav class="navbar">
             <div class="logo">Alexis<span>.</span></div>
             <ul class="nav-links">
-                <li><a href="index.html">Status / Home</a></li>
-                <li><a href="projects.html" class="active">Quests / Projects</a></li>
+                <li><a href="index.html" data-i18n="nav_home">Status / Home</a></li>
+                <li><a href="projects.html" class="active" data-i18n="nav_projects">Quests / Projects</a></li>
+                <li><button id="lang-toggle" class="lang-btn">EN</button></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -30,13 +31,14 @@
     <main>
         <section class="projects page-section">
             <div class="container">
-                <h2>Quest Log <span class="subtitle">All Projects</span></h2>
+                <h2><span data-i18n="projects_page_title">Quest Log</span> <span class="subtitle"
+                        data-i18n="projects_page_subtitle">All Projects</span></h2>
 
                 <!-- Removed Organic Shapes -->
 
                 <div class="project-category" style="margin-bottom: 4rem;">
-                    <h3
-                        style="border-left: 3px solid var(--accent-color); padding-left: 1rem; margin-bottom: 2rem; color: var(--accent-color);">
+                    <h3 style="border-left: 3px solid var(--ui-purple); padding-left: 1rem; margin-bottom: 2rem; color: #ffffff;"
+                        data-i18n="cat_motion">
                         Motion & Visuals</h3>
                     <div class="project-grid">
                         <div class="project-card">
@@ -44,12 +46,13 @@
                                 <img src="images/Composition 1_00045.png" alt="Clip de musique">
                             </div>
                             <div class="project-info">
-                                <h3><a href="projects/project-clip.html">Music video</a></h3>
-                                <p class="project-desc">Video clip production.</p>
+                                <h3><a href="projects/project-clip.html" data-i18n="project_clip">Music video</a></h3>
+                                <p class="project-desc" data-i18n="project_clip_desc">Video clip production.</p>
                                 <p class="tech-stack">After Effects, Photoshop</p>
                                 <div class="project-links" style="margin-top: 1rem;">
                                     <a href="projects/project-clip.html" class="cta-button"
-                                        style="padding: 0.5rem 1rem; font-size: 0.8rem;">START QUEST</a>
+                                        style="padding: 0.5rem 1rem; font-size: 0.8rem;" data-i18n="start_quest">START
+                                        QUEST</a>
                                 </div>
                             </div>
                         </div>
@@ -58,12 +61,15 @@
                                 <img src="images/clip_iut.png" alt="Clip IUT">
                             </div>
                             <div class="project-info">
-                                <h3><a href="projects/project-clip-iut.html">Academy Promotion</a></h3>
-                                <p class="project-desc">Promotion for IUT student life.</p>
+                                <h3><a href="projects/project-clip-iut.html" data-i18n="project_clip_iut">Academy
+                                        Promotion</a></h3>
+                                <p class="project-desc" data-i18n="project_clip_iut_desc">Promotion for IUT student
+                                    life.</p>
                                 <p class="tech-stack">Premiere Pro, After Effects</p>
                                 <div class="project-links" style="margin-top: 1rem;">
                                     <a href="projects/project-clip-iut.html" class="cta-button"
-                                        style="padding: 0.5rem 1rem; font-size: 0.8rem;">START QUEST</a>
+                                        style="padding: 0.5rem 1rem; font-size: 0.8rem;" data-i18n="start_quest">START
+                                        QUEST</a>
                                 </div>
                             </div>
                         </div>
@@ -72,12 +78,15 @@
                                 <img src="images/headlock.png" alt="Edit Motion Design Headlock">
                             </div>
                             <div class="project-info">
-                                <h3><a href="projects/project-headlock.html">Headlock Edit</a></h3>
-                                <p class="project-desc">Motion design rhythmic edit.</p>
+                                <h3><a href="projects/project-headlock.html" data-i18n="project_headlock">Headlock
+                                        Edit</a></h3>
+                                <p class="project-desc" data-i18n="project_headlock_desc">Motion design rhythmic edit.
+                                </p>
                                 <p class="tech-stack">After Effects</p>
                                 <div class="project-links" style="margin-top: 1rem;">
                                     <a href="projects/project-headlock.html" class="cta-button"
-                                        style="padding: 0.5rem 1rem; font-size: 0.8rem;">START QUEST</a>
+                                        style="padding: 0.5rem 1rem; font-size: 0.8rem;" data-i18n="start_quest">START
+                                        QUEST</a>
                                 </div>
                             </div>
                         </div>
@@ -85,8 +94,8 @@
                 </div>
 
                 <div class="project-category" style="margin-bottom: 4rem;">
-                    <h3
-                        style="border-left: 3px solid var(--accent-color); padding-left: 1rem; margin-bottom: 2rem; color: #00ff44;">
+                    <h3 style="border-left: 3px solid var(--ui-purple); padding-left: 1rem; margin-bottom: 2rem; color: #ffffff;"
+                        data-i18n="cat_comm">
                         Communication</h3>
                     <div class="project-grid">
                         <div class="project-card">
@@ -94,13 +103,16 @@
                                 <img src="images/Logo_emblematique-03.png" alt="Description">
                             </div>
                             <div class="project-info">
-                                <h3><a href="projects/project-soirée-hypnose.html">Visual of the hypnosis evening</a>
+                                <h3><a href="projects/project-soirée-hypnose.html" data-i18n="project_hypnose">Visual of
+                                        the hypnosis evening</a>
                                 </h3>
-                                <p class="project-desc">Hypnosis charity event visual identity.</p>
+                                <p class="project-desc" data-i18n="project_hypnose_desc">Hypnosis charity event visual
+                                    identity.</p>
                                 <p class="tech-stack">Photoshop, Illustrator</p>
                                 <div class="project-links" style="margin-top: 1rem;">
                                     <a href="projects/project-soirée-hypnose.html" class="cta-button"
-                                        style="padding: 0.5rem 1rem; font-size: 0.8rem;">START QUEST</a>
+                                        style="padding: 0.5rem 1rem; font-size: 0.8rem;" data-i18n="start_quest">START
+                                        QUEST</a>
                                 </div>
                             </div>
                         </div>
@@ -108,8 +120,8 @@
                 </div>
 
                 <div class="project-category">
-                    <h3
-                        style="border-left: 3px solid var(--accent-color); padding-left: 1rem; margin-bottom: 2rem; color: #ffffff;">
+                    <h3 style="border-left: 3px solid var(--ui-purple); padding-left: 1rem; margin-bottom: 2rem; color: #ffffff;"
+                        data-i18n="cat_photo">
                         Photography</h3>
                     <div class="project-grid">
                         <div class="project-card">
@@ -117,12 +129,14 @@
                                 <img src="images/Photo/Chat/IMG_0940.jpg" alt="Photographie animalière">
                             </div>
                             <div class="project-info">
-                                <h3><a href="projects/project-photo.html">Animal Photography</a></h3>
-                                <p class="project-desc">Feline observation series.</p>
+                                <h3><a href="projects/project-photo.html" data-i18n="project_photo">Animal
+                                        Photography</a></h3>
+                                <p class="project-desc" data-i18n="project_photo_desc">Feline observation series.</p>
                                 <p class="tech-stack">Lightroom, Photoshop</p>
                                 <div class="project-links" style="margin-top: 1rem;">
                                     <a href="projects/project-photo.html" class="cta-button"
-                                        style="padding: 0.5rem 1rem; font-size: 0.8rem;">VIEW LOG</a>
+                                        style="padding: 0.5rem 1rem; font-size: 0.8rem;" data-i18n="view_log">VIEW
+                                        LOG</a>
                                 </div>
                             </div>
                         </div>
@@ -139,8 +153,8 @@
                 <a href="https://instagram.com/crpt.alexis" target="_blank" class="cta-button"
                     style="border: none;">INSTAGRAM</a>
             </div>
-            <p style="text-align: center; margin-top: 2rem; color: var(--text-secondary);">&copy; 2026 Alexis. SYSTEM
-                ONLINE.</p>
+            <p style="text-align: center; margin-top: 2rem; color: var(--text-secondary);">&copy; 2026 Alexis. <span
+                    data-i18n="footer_system">SYSTEM ONLINE.</span></p>
         </div>
     </footer>
 

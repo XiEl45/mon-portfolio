@@ -14,11 +14,12 @@
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo">Alexis.</div>
+            <div class="logo">Alexis<span>.</span></div>
             <ul class="nav-links">
-                <li><a href="../index.html#home">Status / Home</a></li>
-                <li><a href="../index.html#projects">Quests / Projects</a></li>
-                <li><a href="../contact.html">Summon / Contact</a></li>
+                <li><a href="../index.html#home" data-i18n="nav_home">Status / Home</a></li>
+                <li><a href="../index.html#projects" data-i18n="nav_projects">Quests / Projects</a></li>
+                <li><a href="../contact.html" data-i18n="nav_about">Summon / Contact</a></li>
+                <li><button id="lang-toggle" class="lang-btn">EN</button></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -31,16 +32,19 @@
     <main>
         <section class="page-section">
             <div class="container">
-                <a href="../projects.html" class="back-link">← RETURN TO QUEST LOG</a>
+                <a href="../projects.html" class="back-link" data-i18n="back_quests">← RETURN TO QUEST LOG</a>
 
 
 
                 <div class="project-detail-header">
-                    <h1>Clip de présentation IUT</h1>
+                    <h1 data-i18n="h1_clip_iut">Clip de présentation IUT</h1>
                     <div class="project-meta">
-                        <span><strong>Catégorie:</strong> Audiovisuel</span>
-                        <span><strong>Année:</strong> 2025</span>
-                        <span><strong>Rôle:</strong> Réalisateur, Monteur</span>
+                        <span><strong data-i18n="meta_cat">Catégorie:</strong> <span
+                                data-i18n="val_av">Audiovisuel</span></span>
+                        <span><strong data-i18n="meta_year">Année:</strong> 2025</span>
+                        <span><strong data-i18n="meta_role">Rôle:</strong> <span
+                                data-i18n="val_director">Réalisateur</span>, <span
+                                data-i18n="val_edit">Monteur</span></span>
                     </div>
                 </div>
 
@@ -50,22 +54,25 @@
                 </div>
 
                 <div class="project-content">
-                    <h2>Le Projet</h2>
-                    <p>Ce projet consiste en la réalisation d'un clip vidéo promotionnel pour présenter mon IUT.
+                    <h2 data-i18n="p_the_project">Le Projet</h2>
+                    <p data-i18n="p_clip_iut_desc_1">Ce projet consiste en la réalisation d'un clip vidéo promotionnel
+                        pour présenter mon IUT.
                         L'objectif était de mettre en valeur la vie étudiantes et les infrastructures de
                         l'établissement.</p>
 
-                    <h2>Approche Créative</h2>
-                    <p>J'ai cherché à capturer des moments authentiques et dynamiques pour retranscrire l'atmosphère de
+                    <h2 data-i18n="p_approach">Approche Créative</h2>
+                    <p data-i18n="p_clip_iut_approach_1">J'ai cherché à capturer des moments authentiques et dynamiques
+                        pour retranscrire l'atmosphère de
                         l'IUT.</p>
 
-                    <h2>Outils Utilisés</h2>
-                    <p class="tech-stack"><strong>Logiciels:</strong> Adobe Premiere Pro, Adobe After Effects</p>
+                    <h2 data-i18n="p_tools">Outils Utilisés</h2>
+                    <p class="tech-stack" data-i18n="p_clip_iut_tools_1"><strong>Logiciels:</strong> Adobe Premiere Pro,
+                        Adobe After Effects</p>
 
-                    <h2>Ressources</h2>
-                    <p>Accédez à la vidéo sur le Drive.</p>
+                    <h2 data-i18n="p_resources">Ressources</h2>
+                    <p data-i18n="p_clip_iut_resources_1">Accédez à la vidéo sur le Drive.</p>
                     <a href="https://drive.google.com/drive/folders/1wosbjYwwZGu4rO5vPrUjhOxTLO9FwnvR?usp=sharing"
-                        target="_blank" class="cta-button">Voir le dossier Drive</a>
+                        target="_blank" class="cta-button" data-i18n="p_view_drive">Voir le dossier Drive</a>
                 </div>
             </div>
         </section>
