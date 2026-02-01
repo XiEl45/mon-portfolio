@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projets - Alexis</title>
+    <title>Quests - Alexis</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -15,10 +14,10 @@
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo">Alexis.</div>
+            <div class="logo">Alexis<span>.</span></div>
             <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="projects.html" class="active">Projets</a></li>
+                <li><a href="index.html">Status</a></li>
+                <li><a href="projects.html" class="active">Quests</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -32,78 +31,99 @@
     <main>
         <section class="projects page-section">
             <div class="container">
-                <h2>Mes Projets</h2>
+                <h2>Quest Log</h2>
 
-                <!-- Organic Shapes -->
-                <div class="shapes-container">
-                    <div class="shape shape-top-right">
-                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                            <path fill="#0D1B2A"
-                                d="M45.7,-76C59.9,-69.2,72.4,-58.7,82.1,-45.9C91.8,-33.1,98.7,-18,97.4,-3.2C96.1,11.6,86.6,26.1,75.6,38.3C64.6,50.5,52.2,60.4,39,68.6C25.8,76.8,11.8,83.3,-1.8,86.4C-15.4,89.5,-28.6,89.2,-41.3,83.1C-54,77,-66.2,65,-74.7,51.5C-83.2,38,-88,23,-88.6,7.8C-89.2,-7.4,-85.6,-22.8,-77.4,-36.5C-69.2,-50.2,-56.4,-62.2,-42.8,-69.4C-29.2,-76.6,-14.6,-79,0.6,-80C15.8,-81,31.5,-82.8,45.7,-76Z"
-                                transform="translate(100 100)" />
-                        </svg>
-                    </div>
-                </div>
+                <!-- Removed Organic Shapes -->
 
-                <div class="project-category">
-                    <h3>Création numérique et Audiovisuel</h3>
+                <div class="project-category" style="margin-bottom: 4rem;">
+                    <h3
+                        style="border-left: 3px solid var(--accent-color); padding-left: 1rem; margin-bottom: 2rem; color: var(--accent-color);">
+                        Motion & Visuals (S-Rank)</h3>
                     <div class="project-grid">
                         <div class="project-card">
                             <div class="project-thumbnail">
                                 <img src="images/Composition 1_00045.png" alt="Clip de musique">
                             </div>
-                            <h3><a href="projects/project-clip.html">Clip de musique</a></h3>
-                            <p>Ce projet est un clip de musique réalisé dans le cadre d'un cours de création numérique.
-                            </p>
-                            <p class="tech-stack"><strong>Outils:</strong> After Effects, Photoshop</p>
-                            <div class="project-links">
-                                <a href="projects/project-clip.html" class="btn-link">Voir la vidéo</a>
+                            <div class="project-info">
+                                <h3><a href="projects/project-clip.html">Musical Incident</a></h3>
+                                <p class="project-desc">Video clip production.</p>
+                                <p class="tech-stack">After Effects, Photoshop</p>
+                                <div class="project-links" style="margin-top: 1rem;">
+                                    <a href="projects/project-clip.html" class="cta-button"
+                                        style="padding: 0.5rem 1rem; font-size: 0.8rem;">START QUEST</a>
+                                </div>
                             </div>
                         </div>
                         <div class="project-card">
                             <div class="project-thumbnail">
                                 <img src="images/clip_iut.png" alt="Clip IUT">
                             </div>
-                            <h3><a href="projects/project-clip-iut.html">Clip de présentation IUT</a></h3>
-                            <p>Réalisation d'un clip promotionnel pour présenter l'IUT et sa vie étudiante.</p>
-                            <p class="tech-stack"><strong>Outils:</strong> Premiere Pro, After Effects</p>
-                            <div class="project-links">
-                                <a href="projects/project-clip-iut.html" class="btn-link">Voir le projet</a>
+                            <div class="project-info">
+                                <h3><a href="projects/project-clip-iut.html">Academy Promotion</a></h3>
+                                <p class="project-desc">Promotion for IUT student life.</p>
+                                <p class="tech-stack">Premiere Pro, After Effects</p>
+                                <div class="project-links" style="margin-top: 1rem;">
+                                    <a href="projects/project-clip-iut.html" class="cta-button"
+                                        style="padding: 0.5rem 1rem; font-size: 0.8rem;">START QUEST</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-thumbnail">
+                                <img src="images/headlock.png" alt="Edit Motion Design Headlock">
+                            </div>
+                            <div class="project-info">
+                                <h3><a href="projects/project-headlock.html">Headlock Edit</a></h3>
+                                <p class="project-desc">Motion design rhythmic edit.</p>
+                                <p class="tech-stack">After Effects</p>
+                                <div class="project-links" style="margin-top: 1rem;">
+                                    <a href="projects/project-headlock.html" class="cta-button"
+                                        style="padding: 0.5rem 1rem; font-size: 0.8rem;">START QUEST</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-category">
-                    <h3>Communication</h3>
+                <div class="project-category" style="margin-bottom: 4rem;">
+                    <h3
+                        style="border-left: 3px solid var(--accent-color); padding-left: 1rem; margin-bottom: 2rem; color: #00ff44;">
+                        Communication (C-Rank)</h3>
                     <div class="project-grid">
                         <div class="project-card">
                             <div class="project-thumbnail">
                                 <img src="images/Logo_emblematique-03.png" alt="Description">
                             </div>
-                            <h3><a href="projects/project-soirée-hypnose.html">Visuel de la Soirée Hypnose</a></h3>
-                            <p>Création de l'affiche et du flyers pour la Soirée Hypnose avec un fond caritatif</p>
-                            <p class="tech-stack"><strong>Outils:</strong> Photoshop, Illustrator</p>
-                            <div class="project-links">
-                                <a href="projects/project-soirée-hypnose.html" class="btn-link">Voir le projet</a>
+                            <div class="project-info">
+                                <h3><a href="projects/project-soirée-hypnose.html">Event Horizon</a></h3>
+                                <p class="project-desc">Hypnosis charity event visual identity.</p>
+                                <p class="tech-stack">Photoshop, Illustrator</p>
+                                <div class="project-links" style="margin-top: 1rem;">
+                                    <a href="projects/project-soirée-hypnose.html" class="cta-button"
+                                        style="padding: 0.5rem 1rem; font-size: 0.8rem;">START QUEST</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-category">
-                    <h3>Photographie</h3>
+                    <h3
+                        style="border-left: 3px solid var(--accent-color); padding-left: 1rem; margin-bottom: 2rem; color: #ffffff;">
+                        Photography (E-Rank)</h3>
                     <div class="project-grid">
                         <div class="project-card">
                             <div class="project-thumbnail">
                                 <img src="images/Photo/Chat/IMG_0940.jpg" alt="Photographie animalière">
                             </div>
-                            <h3><a href="projects/project-photo.html">Photographie animalière</a></h3>
-                            <p>Série de photos d'un chat lors d'une sortie entre amis
-                            </p>
-                            <p class="tech-stack"><strong>Outils:</strong> Lightroom, Photoshop</p>
-                            <div class="project-links">
-                                <a href="projects/project-photo.html" class="btn-link">Voir la galerie</a>
+                            <div class="project-info">
+                                <h3><a href="projects/project-photo.html">Observation Log</a></h3>
+                                <p class="project-desc">Feline observation series.</p>
+                                <p class="tech-stack">Lightroom, Photoshop</p>
+                                <div class="project-links" style="margin-top: 1rem;">
+                                    <a href="projects/project-photo.html" class="cta-button"
+                                        style="padding: 0.5rem 1rem; font-size: 0.8rem;">VIEW LOG</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -114,30 +134,19 @@
 
     <footer>
         <div class="container">
-            <div class="social-links">
-                <a href="#" class="email-trigger">Email</a>
-                <a href="https://instagram.com/crpt.alexis" target="_blank">Instagram</a>
+            <div class="social-links" style="display: flex; gap: 2rem; justify-content: center;">
+                <a href="mailto:alexiscarpentier62@gmail.com" class="cta-button" style="border: none;">EMAIL</a>
+                <a href="https://instagram.com/crpt.alexis" target="_blank" class="cta-button"
+                    style="border: none;">INSTAGRAM</a>
             </div>
-            <p>&copy; 2025 Alexis. Tous droits réservés.</p>
+            <p style="text-align: center; margin-top: 2rem; color: var(--text-secondary);">&copy; 2026 Alexis. SYSTEM
+                ONLINE.</p>
         </div>
     </footer>
 
     <button id="back-to-top" title="Retour en haut">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
-
-    <!-- Email Modal -->
-    <div id="email-modal" class="modal-overlay">
-        <div class="modal-content">
-            <button class="modal-close">&times;</button>
-            <h3 class="modal-title">Me contacter</h3>
-            <div class="copy-container">
-                <input type="text" value="alexiscarpentier62@gmail.com" readonly class="email-input">
-                <button class="copy-btn">Copier</button>
-            </div>
-            <p class="copy-feedback">Email copié !</p>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>
