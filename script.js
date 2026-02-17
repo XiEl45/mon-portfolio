@@ -65,7 +65,7 @@ const translations = {
         val_event: "Event",
         val_graphic: "Graphic Design",
         val_visual_graphist: "Visual Designer",
-        start_quest: "START QUEST",
+        start_quest: "SEE QUEST",
         view_log: "VIEW LOG",
         // Project Detail
         back_quests: "← RETURN TO QUEST LOG",
@@ -139,7 +139,7 @@ const translations = {
         hero_job: "CLASSE : MOTION DESIGNER",
         hero_title: "TITRE : LE VISUALISEUR",
         hero_exp: "EXP",
-        hero_enter: "ENTRER DONJON",
+        hero_enter: "ENTRER DANS LE DONJON",
         sect_projects_title: "Donjons d'Instance",
         sect_projects_subtitle: "Mes Projets",
         project_difficulty: "DIFFICULTÉ :",
@@ -178,7 +178,7 @@ const translations = {
         cat_motion: "Motion & Visuels",
         cat_comm: "Communication",
         cat_photo: "Photographie",
-        start_quest: "DÉMARRER QUÊTE",
+        start_quest: "VOIR LA QUÊTE",
         view_log: "VOIR LOG",
         // Project Detail
         back_quests: "← RETOUR JOURNAL QUÊTES",
