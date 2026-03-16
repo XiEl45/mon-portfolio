@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grateful Project</title>
+    <!-- On peut charger la police Inter de Google Fonts pour un look encore plus pointu (optionnel) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-body: #fafafa;
+            --bg-card: #ffffff;
+            --text-main: #111111;
+            --text-muted: #888888;
+            --accent: #8a4baf;
+            /* Touche de violet sobre */
+            --accent-light: rgba(138, 75, 175, 0.15);
+            /* Utilise Inter si chargé, sinon retombe sur les polices système très propres */
+            --font-stack: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+            --shadow-hover: 0 15px 40px rgba(138, 75, 175, 0.12), 0 5px 12px rgba(138, 75, 175, 0.08);
+            /* Ombre avec une teinte violette */
+            --transition-smooth: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        ::selection {
+            background: var(--accent-light);
+            color: var(--accent);
+        }
+
+        /* Basic Reset */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-stack);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding: 5rem 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            margin-bottom: 5rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            color: var(--text-main);
+        }
+
+        h1 span {
+            color: var(--accent);
+            font-weight: 400;
+        }
+
+        main {
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        /* --- Grille --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            body {
+                padding: 3rem 1.5rem;
+            }
+
+            header {
+                margin-bottom: 3rem;
+            }
+        }
+
+        /* --- Cartes Polaroid --- */
+        .card {
+            background-color: var(--bg-card);
+            border-radius: 2px;
+            padding: 1rem;
+            padding-bottom: 1.5rem;
+            box-shadow: var(--shadow-card);
+            display: flex;
+            flex-direction: column;
+            transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+        }
+
+        /* Interaction au survol (Antigravity Touch) */
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card:hover .card-media {
+            transform: scale(1.04);
+        }
+
+        .card:hover .card-content {
+            transform: scale(1.02);
+        }
+
+        /* La zone de l'image (ou le placeholder carré) */
+        .card-media {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 2px;
+            margin-bottom: 1.25rem;
+            display: block;
+            object-fit: cover;
+            background-color: #f3f3f3;
+            /* Anti-téléchargement visuel et interaction */
+            user-select: none;
+            -webkit-user-drag: none;
+            -webkit-touch-callout: none;
+            /* Retrait de pointer-events: none; pour autoriser le clic (agrandissement) mais blocage du contextmenu par JS conservé */
+            cursor: pointer;
+            transition: transform var(--transition-smooth);
+        }
+
+        /* Dégradés ultra-subtils pour illustrer les images manquantes en attendant */
+        .placeholder-1 {
+            background: linear-gradient(135deg, #f5f7fa 0%, #ebedee 100%);
+        }
+
+        .placeholder-2 {
+            background: linear-gradient(135deg, #eef2f3 0%, #e2e8e9 100%);
+        }
+
+        .placeholder-3 {
+            background: linear-gradient(135deg, #ece9e6 0%, #ffffff 100%);
+        }
+
+        .placeholder-4 {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+        }
+
+        .placeholder-5 {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            opacity: 0.15;
+        }
+
+        .placeholder-6 {
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            opacity: 0.15;
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 0.5rem;
+            transition: transform var(--transition-smooth);
+        }
+
+        .card-date {
+            font-size: 0.65rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-muted);
+            margin-bottom: 0.6rem;
+        }
+
+        .card-text {
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: var(--text-main);
+            max-width: 95%;
+        }
+
+        /* --- Animation d'entrée au chargement --- */
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- Mouse Follower --- */
+        #mouse-follower {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+            mix-blend-mode: multiply;
+            /* Crée un bel effet de fusion avec le fond clair */
+        }
+
+        #mouse-follower.hover-effect {
+            width: 70px;
+            height: 70px;
+            opacity: 0.08;
+        }
+
+        /* --- Modale / Lightbox d'Image --- */
+        .modal {
+            display: none;
+            /* Masqué par défaut */
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            transform: scale(0.95);
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            user-select: none;
+            -webkit-user-drag: none;
+            -webkit-touch-callout: none;
+        }
+
+        .modal.show .modal-content {
+            transform: scale(1);
+        }
+
+        /* Bouton fermer caché (on clique juste à côté) mais on peut l'ajouter */
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Grateful<span>.</span></h1>
+    </header>
+
+    <main>
+        <div class="grid">
+
+            <article class="card fade-in" style="animation-delay: 0.05s;">
+                <img src="Img1.jpg" alt="Jour 1" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 1</span>
+                    <p class="card-text">Today, I went to a friend's house to help him set up his new computer. I was
+                        grateful to spend time with him and to have helped him.</p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 0.10s;">
+                <img src="Img2.jpg" alt="Jour 2" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 2</span>
+                    <p class="card-text">A little laugh today: my cat thinks he's a meerkat. I'm grateful for these
+                        moments of laughter.</p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 0.15s;">
+                <img src="Img3.jpg" alt="Jour 3" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 3</span>
+                    <p class="card-text">Happy to have shared an excellent meal with my family today. I'm grateful for
+                        these moments of togetherness and good food.</p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 0.20s;">
+                <img src="Img4.jpg" alt="Jour 4" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 4</span>
+                    <p class="card-text">Today I went out to take photos with my friends. We came across a meme on the
+                        internet that made us laugh and reminded us of his camera. I'm grateful for inside jokes and the
+                        bond of friendship.</p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 0.25s;">
+                <img src="Img23.jpg" alt="Jour 5" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 5</span>
+                    <p class="card-text">Rediscovering my favourite game through someone else's eyes. I'm grateful for
+                        these passionate analyses that transform our view of the works and thrill us all over again.</p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 0.30s;">
+                <img src="Img24.jpg" alt="Jour 6" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 6</span>
+                    <p class="card-text">Discovered a new Manhwa today thanks to TikTok. Can't wait to read more. I'm
+                        grateful for those unexpected finds and the thrill of starting a great new story.</p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 0.35s;">
+                <img src="Img22.jpg" alt="Jour 7" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 7</span>
+                    <p class="card-text">Distance is just a detail. I'm grateful for these digital windows that allow us
+                        to stay close, laugh and share, even through a screen.</p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 0.40s;">
+                <img src="Img27.jpg" alt="Jour 8" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 8</span>
+                    <p class="card-text">I love seeing my characters evolve in this game based on my favorite Manhwa.
+                        It's
+                        such a joy to collect my favorite heroes. I'm grateful for these immersive worlds that bring my
+                        favorite stories to life.</p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 0.45s;">
+                <img src="Img9.jpg" alt="Jour 9" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 9</span>
+                    <p class="card-text">My two cats sleeping peacefully on the sofa, one of them in a funny way: it
+                        looks like he's being punished! I'm grateful for this calm and these little moments of
+                        absurdity.</p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 0.50s;">
+                <img src="Img26.jpg" alt="Jour 10" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 10</span>
+                    <p class="card-text">The episode is finally out, introducing my favorite character from the new
+                        season of Jujutsu Kaisen. I'm grateful for the breathtaking animation and the hype of seeing
+                        this story come to life.</p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 0.55s;">
+                <img src="Img11.jpg" alt="Jour 11" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 11</span>
+                    <p class="card-text">Using my break to bring one of my favourite characters to life in motion
+                        design. I'm grateful for these moments of pure creation where passion takes the lead.</p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 0.60s;">
+                <img src="Img29.jpg" alt="Jour 12" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 12</span>
+                    <p class="card-text">I decided to go back to my roots and watch a series of videos from my
+                        childhood. I'm grateful to have the chance to revisit these memories and relive part of my
+                        childhood.</p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 0.65s;">
+                <img src="Img13.jpg" alt="Jour 13" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 13</span>
+                    <p class="card-text">A McDonald's before going out for the evening. It was the first time I had seen
+                        a friend I hadn't seen in a long time. I'm grateful for these friendships that pick up exactly
+                        where they left off, even after a long time.</p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 0.70s;">
+                <img src="Img25.jpg" alt="Jour 14" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 14</span>
+                    <p class="card-text">Music is a core part of my daily life. I love adding new tracks to my playlist.
+                        I'm grateful for the endless inspiration and the rhythm that keeps me going.</p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 0.75s;">
+                <img src="Img20.png" alt="Jour 15" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 15</span>
+                    <p class="card-text">Changing guitar strings with friends and chatting all day long. Grateful for
+                        these moments of sharing and discussion.</p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 0.80s;">
+                <img src="Img16.jpg" alt="Jour 16" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 16</span>
+                    <p class="card-text">A wonderful culinary discovery in Lille with friends. I'm grateful for the
+                        excellent food, the inspiring setting of the restaurant and those feel-good moments of sharing.
+                    </p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 0.85s;">
+                <img src="Img17.jpg" alt="Jour 17" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 17</span>
+                    <p class="card-text">I used the money left on my ‘Pass Culture’ to buy two vinyl records by an
+                        artist I recently discovered. I'm grateful for this new music that I'll be playing on repeat.
+                    </p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 0.90s;">
+                <img src="Img18.jpg" alt="Jour 18" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 18</span>
+                    <p class="card-text">Classes finished earlier than expected. Taking advantage of this time to stay
+                        outside and simply savour the moment. I'm grateful for these improvised breaks and the freedom
+                        to do nothing.</p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 0.95s;">
+                <img src="Img19.jpg" alt="Jour 19" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 19</span>
+                    <p class="card-text">New chapters of one of my favorite manhwa are out! I'm grateful for these small
+                        moments of escape and the incredible storytelling that keeps me hooked.</p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 1.00s;">
+                <img src="Img28.jpg" alt="Jour 20" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 20</span>
+                    <p class="card-text">I love Lightroom—definitely my favorite Adobe software next to After Effects.
+                        Enhancing my photos is so satisfying. I'm grateful for the tools that help me refine my vision
+                        and bring out the beauty in every shot.</p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 1.05s;">
+                <img src="Img21.jpg" alt="Jour 21" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 21</span>
+                    <p class="card-text">Lights, camera, collaboration. An intense day of filming in the studio with
+                        friends. I'm grateful for this creative synergy and the pleasure of seeing a project come to
+                        life together.</p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 1.10s;">
+                <img src="Img7.jpg" alt="Jour 22" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 22</span>
+                    <p class="card-text">Today was open house day at the IUT. In addition to being able to present
+                        motion design, I got to see my clip shown in front of everyone. Grateful to see the outcome of
+                        my work being shared.</p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 1.15s;">
+                <img src="Img5.jpg" alt="Jour 23" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 23</span>
+                    <p class="card-text">Although the buildings were not very inviting, I had just left a friend's house
+                        after spending a wonderful day. I was waiting for my bus. I'm grateful for these simple moments
+                    </p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 1.20s;">
+                <img src="Img6.jpg" alt="Jour 24" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 24</span>
+                    <p class="card-text">Surprise visit: my second cat has conquered the upstairs to come and keep me
+                        company. I'm grateful for her silent presence and this moment of companionship.</p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 1.25s;">
+                <img src="Img14.jpg" alt="Jour 25" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 25</span>
+                    <p class="card-text">That day, I had to go to Lille. My train was cancelled, but I managed to catch
+                        a bus just in time to go to Lens and take a train from there. I am grateful for my quick
+                        thinking and for the stroke of luck that allowed me to reach my destination.</p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 1.30s;">
+                <img src="Img10.jpg" alt="Jour 26" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 26</span>
+                    <p class="card-text">Today, a concert was organised by my university, with teachers and students
+                        from MMI. I'm grateful for this kind of event that brings the universitiy to life.</p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 1.35s;">
+                <img src="Img8.jpg" alt="Jour 27" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 27</span>
+                    <p class="card-text">There's nothing like a trip to McDonald's with friends to unwind after class.
+                        I'm grateful for these moments of relaxation and the simplicity of our friendship.</p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 1.40s;">
+                <img src="Img15.jpg" alt="Jour 28" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 28</span>
+                    <p class="card-text">An unexpected moment of tenderness: my cat's little head peeking through the
+                        window after my shower. I am grateful for his curiosity and his presence, which makes me smile
+                        first thing in the morning.</p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 1.45s;">
+                <img src="Img12.jpg" alt="Jour 29" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 29</span>
+                    <p class="card-text">Back from a family trip to the cinema. I'm grateful for these moments of shared
+                        escapism and the pleasure of gathering in front of the big screen.</p>
+                </div>
+            </article>
+
+            <article class="card fade-in" style="animation-delay: 1.50s;">
+                <img src="Img30.jpg" alt="Jour 30" class="card-media" loading="lazy">
+                <div class="card-content">
+                    <span class="card-date">JOUR 30</span>
+                    <p class="card-text">The Formula 1 season is finally back. I woke up at 5 a.m. to enjoy the roar of
+                        the engines. I'm grateful for the thrill of racing and the passion that makes every viewing
+                        worthwhile.</p>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <div id="mouse-follower"></div>
+
+    <!-- Modale d'agrandissement d'image -->
+    <div id="image-modal" class="modal">
+        <img class="modal-content" id="modal-img" alt="Zoomed in">
+    </div>
+
+    <script>
+        // --- Lightbox / Image Modal Logic ---
+        const modal = document.getElementById("image-modal");
+        const modalImg = document.getElementById("modal-img");
+
+        document.querySelectorAll('.card-media').forEach(img => {
+            img.addEventListener('click', function (e) {
+                // Empêche la propagation si nécessaire, mais ici on ouvre la modale
+                modalImg.src = this.src;
+                modal.classList.add("show");
+                document.body.style.overflow = "hidden"; // Empêche de scroller derrière la modale
+            });
+        });
+
+        modal.addEventListener('click', function () {
+            modal.classList.remove("show");
+            document.body.style.overflow = "auto";
+
+            // Attendre la fin de l'animation pour remettre display: none
+            setTimeout(() => {
+                if (!modal.classList.contains("show")) {
+                    modalImg.src = "";
+                }
+            }, 400); // 0.4s correspond à la transition CSS
+        });
+        // --- Custom Cursor Animation ---
+        const follower = document.getElementById('mouse-follower');
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let followerX = mouseX;
+        let followerY = mouseY;
+
+        // Mise à jour de la position cible
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        // Fonction d'animation de fluidité (lerp)
+        function animate() {
+            followerX += (mouseX - followerX) * 0.15;
+            followerY += (mouseY - followerY) * 0.15;
+
+            follower.style.transform = `translate(${followerX}px, ${followerY}px) translate(-50%, -50%)`;
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        // Effet de survol sur les cartes
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                follower.classList.add('hover-effect');
+            });
+            card.addEventListener('mouseleave', () => {
+                follower.classList.remove('hover-effect');
+            });
+        });
+
+        // --- Protection contre le téléchargement d'images ---
+        // Empêche le menu contextuel (clic droit) sur l'ensemble du document pour les images
+        document.addEventListener('contextmenu', event => {
+            if (event.target.tagName === 'IMG' || event.target.classList.contains('card-media')) {
+                event.preventDefault();
+            }
+        });
+
+        // Empêche le glisser-déposer des images vers le bureau
+        document.addEventListener('dragstart', event => {
+            if (event.target.tagName === 'IMG' || event.target.classList.contains('card-media')) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+
+</html>
