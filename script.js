@@ -105,6 +105,10 @@ const translations = {
         p_photo_tools_1: "Gear: Canon EOS 2000D, 18-55mm f/3.5-5.6",
         p_photo_tools_2: "Software: Adobe Lightroom",
         p_photo_resources_1: "Access full image database on the Drive.",
+        // Project: Karting
+        p_karting_desc_1: "A series capturing the speed, adrenaline, and intensity of kart racing. Focus on the movements and emotions of the drivers on the track, as well as the atmosphere and preparation in the paddocks.",
+        p_karting_approach_1: "Using fast shutter speeds to precisely freeze the action, highlighting the intensity of the race and the drivers' concentration.",
+        p_karting_tools_1: "Gear: Canon EOS 2000D, 70-300mm f/4-6.3",
         // Project: Hypnose
         p_hypnose_msg: "> INITIALIZING PROJECT DATA...",
         p_hypnose_desc_1: "Create a strong and modern visual identity for the second edition of the Hypnosis Night in Lens. This project is organized by a group of TC students who called upon my team to create a visual identity for the event.",
@@ -218,6 +222,10 @@ const translations = {
         p_photo_tools_1: "Équipement : Canon EOS 2000D, 18-55mm f/3.5-5.6",
         p_photo_tools_2: "Logiciel : Adobe Lightroom",
         p_photo_resources_1: "Accédez à la base de données images complète sur le Drive.",
+        // Project: Karting
+        p_karting_desc_1: "Une série capturant la vitesse, l'adrénaline et l'intensité des courses de karting. Focus sur les mouvements et les émotions des pilotes sur la piste, ainsi que sur l'atmosphère et la préparation dans les paddocks.",
+        p_karting_approach_1: "Utilisation de vitesses d'obturation rapides pour figer l'action avec précision, mettant en valeur l'intensité de la course et la concentration des pilotes.",
+        p_karting_tools_1: "Équipement : Canon EOS 2000D, 70-300mm f/4-6.3",
         // Project: Hypnose
         p_hypnose_msg: "> INITIALISATION DONNÉES PROJET...",
         p_hypnose_desc_1: "Créer une identité visuelle forte et moderne pour la deuxième édition de la Nuit de l'Hypnose à Lens. Ce projet est organisé par un groupe d'étudiants en TC qui a fait appel à mon équipe pour créer une identité visuelle pour l'événement.",
