@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XiEl — Alexis Carpentier | Post-Production, Vidéo & Motion Design</title>
-    <meta name="description" content="Portfolio de XiEl (Alexis Carpentier) — Créatif pluridisciplinaire en montage vidéo, motion design, étalonnage cinématique et photographie.">
+    <title>Alexis Carpentier | Post-Production, Vidéo & Motion Design</title>
+    <meta name="description" content="Portfolio d'Alexis Carpentier — Créatif pluridisciplinaire en montage vidéo, motion design, étalonnage cinématique et photographie.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
     <header>
         <nav class="navbar">
             <div class="brand-wrapper">
-                <a href="#home" class="logo">XiEl<span class="logo-dot">.</span></a>
+                <a href="index.html" class="logo">Alexis<span class="logo-dot">.</span></a>
                 <div class="brand-meta">
                     <span>POST-PROD & MOTION</span>
                     <span class="status-live"><span class="rec-dot"></span><span data-i18n="nav_status_live">AVAILABLE FOR WORK</span></span>
@@ -26,11 +26,11 @@
             </div>
 
             <ul class="nav-links">
-                <li><a href="#home" data-i18n="nav_home">Accueil</a></li>
-                <li><a href="#projects" data-i18n="nav_projects">Projets</a></li>
-                <li><a href="#expertise" data-i18n="nav_expertise">Expertise</a></li>
-                <li><a href="#about" data-i18n="nav_about">À Propos</a></li>
-                <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+                <li><a href="index.html" class="active" data-i18n="nav_home">Accueil</a></li>
+                <li><a href="projects.html" data-i18n="nav_projects">Projets</a></li>
+                <li><a href="expertise.html" data-i18n="nav_expertise">Expertise</a></li>
+                <li><a href="about.html" data-i18n="nav_about">À Propos</a></li>
+                <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
             </ul>
 
             <div class="nav-actions">
@@ -61,8 +61,7 @@
                         </div>
 
                         <h1 class="hero-title">
-                            XiEl<span class="accent-text">.</span>
-                            <span class="title-light">Alexis Carpentier</span>
+                            Alexis Carpentier<span class="accent-text">.</span>
                         </h1>
 
                         <p class="hero-lead" data-i18n="hero_lead">
@@ -78,10 +77,10 @@
                         </div>
 
                         <div class="hero-actions">
-                            <a href="#projects" class="btn-primary" data-i18n="hero_cta_projects">
-                                Explorer les Projets <i class="fa-solid fa-arrow-down"></i>
+                            <a href="projects.html" class="btn-primary" data-i18n="hero_cta_projects">
+                                Explorer les Projets <i class="fa-solid fa-arrow-right"></i>
                             </a>
-                            <a href="#contact" class="btn-secondary" data-i18n="hero_cta_contact">
+                            <a href="contact.html" class="btn-secondary" data-i18n="hero_cta_contact">
                                 Me Contacter <i class="fa-solid fa-envelope"></i>
                             </a>
                         </div>
@@ -94,7 +93,7 @@
                             <div class="crop-mark-bl"></div>
 
                             <div class="viewfinder-frame">
-                                <img src="images/AlexisC.jpg" alt="Alexis Carpentier - XiEl"
+                                <img src="images/AlexisC.jpg" alt="Alexis Carpentier"
                                     onerror="this.src='https://ui-avatars.com/api/?name=Alexis+Carpentier&background=181b22&color=f8fafc&size=400'">
 
                                 <!-- OSD Cinema Overlays -->
@@ -116,7 +115,7 @@
             </div>
         </section>
 
-        <!-- Projects Showcase Section -->
+        <!-- Selected Projects Showcase Preview -->
         <section id="projects" class="page-section">
             <div class="container">
                 <div class="section-header fade-in-section">
@@ -128,16 +127,12 @@
                         </p>
                     </div>
 
-                    <!-- Filter Tabs -->
-                    <div class="filter-controls">
-                        <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Tous <span class="filter-count">(8)</span></button>
-                        <button class="filter-btn" data-filter="video" data-i18n="filter_video">Vidéo <span class="filter-count">(3)</span></button>
-                        <button class="filter-btn" data-filter="motion" data-i18n="filter_motion">Motion <span class="filter-count">(1)</span></button>
-                        <button class="filter-btn" data-filter="photo" data-i18n="filter_photo">Photo <span class="filter-count">(4)</span></button>
-                    </div>
+                    <a href="projects.html" class="btn-secondary">
+                        <span data-i18n="see_all_projects">Consulter Tous les Projets</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
 
-                <!-- Projects Grid -->
+                <!-- Projects Grid Preview (3 highlights) -->
                 <div class="projects-grid">
                     <!-- Headlock Edit -->
                     <div class="project-card fade-in-section" data-category="motion">
@@ -148,7 +143,7 @@
                         </div>
                         <div class="project-info">
                             <div class="project-header-meta">
-                                <span class="mono-tag" data-i18n="val_motion_designer">Motion Designer</span>
+                                <span>AFTER EFFECTS</span>
                                 <span class="project-year">2025</span>
                             </div>
                             <h3 data-i18n="project_headlock">Edit Motion Design — Headlock</h3>
@@ -158,26 +153,24 @@
                             <div class="project-footer-specs">
                                 <div class="tech-stack-pills">
                                     <span class="tech-pill">After Effects</span>
-                                    <span class="tech-pill">Sound Sync</span>
+                                    <span class="tech-pill">Motion</span>
                                 </div>
-                                <div class="project-card-arrow">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </div>
+                                <div class="project-card-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
                             </div>
+                            <a href="projects/project-headlock.html" class="stretched-link" aria-label="Voir le projet Headlock"></a>
                         </div>
-                        <a href="projects/project-headlock.html" class="stretched-link" aria-label="Voir le projet Headlock"></a>
                     </div>
 
-                    <!-- Music Video (Clip) -->
+                    <!-- Music Video Clip -->
                     <div class="project-card fade-in-section" data-category="video">
                         <div class="project-thumbnail">
-                            <span class="project-badge-discipline">Vidéo & VFX</span>
+                            <span class="project-badge-discipline">Montage Vidéo</span>
                             <span class="project-aspect-ratio">2.39:1 • 4K</span>
                             <img src="images/Composition 1_00045.png" alt="Clip de musique">
                         </div>
                         <div class="project-info">
                             <div class="project-header-meta">
-                                <span class="mono-tag" data-i18n="val_director">Réalisation & Montage</span>
+                                <span>PREMIERE PRO / AFTER EFFECTS</span>
                                 <span class="project-year">2025</span>
                             </div>
                             <h3 data-i18n="project_clip">Clip Musical</h3>
@@ -187,86 +180,25 @@
                             <div class="project-footer-specs">
                                 <div class="tech-stack-pills">
                                     <span class="tech-pill">Premiere Pro</span>
-                                    <span class="tech-pill">After Effects</span>
-                                    <span class="tech-pill">Photoshop</span>
+                                    <span class="tech-pill">Color Grading</span>
                                 </div>
-                                <div class="project-card-arrow">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </div>
+                                <div class="project-card-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
                             </div>
+                            <a href="projects/project-clip.html" class="stretched-link" aria-label="Voir le clip musical"></a>
                         </div>
-                        <a href="projects/project-clip.html" class="stretched-link" aria-label="Voir le clip musical"></a>
                     </div>
 
-                    <!-- Clip IUT -->
-                    <div class="project-card fade-in-section" data-category="video">
-                        <div class="project-thumbnail">
-                            <span class="project-badge-discipline">Vidéo Institutionnelle</span>
-                            <span class="project-aspect-ratio">16:9 • 1080p</span>
-                            <img src="images/clip_iut.png" alt="Clip Promotionnel IUT">
-                        </div>
-                        <div class="project-info">
-                            <div class="project-header-meta">
-                                <span class="mono-tag" data-i18n="val_edit">Montage & Cadrage</span>
-                                <span class="project-year">2025</span>
-                            </div>
-                            <h3 data-i18n="project_clip_iut">Promotion IUT</h3>
-                            <p class="project-desc" data-i18n="project_clip_iut_desc">
-                                Film promotionnel dynamique mettant en lumière la vie étudiante et les infrastructures.
-                            </p>
-                            <div class="project-footer-specs">
-                                <div class="tech-stack-pills">
-                                    <span class="tech-pill">Premiere Pro</span>
-                                    <span class="tech-pill">After Effects</span>
-                                </div>
-                                <div class="project-card-arrow">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="projects/project-clip-iut.html" class="stretched-link" aria-label="Voir la vidéo IUT"></a>
-                    </div>
-
-                    <!-- Soirée Hypnose -->
-                    <div class="project-card fade-in-section" data-category="video">
-                        <div class="project-thumbnail">
-                            <span class="project-badge-discipline">Direction Artistique</span>
-                            <span class="project-aspect-ratio">Identité Visuelle</span>
-                            <img src="images/Logo_emblematique-03.png" alt="Affiche Nuit de l'Hypnose">
-                        </div>
-                        <div class="project-info">
-                            <div class="project-header-meta">
-                                <span class="mono-tag" data-i18n="val_visual_graphist">Graphisme & DA</span>
-                                <span class="project-year">2025</span>
-                            </div>
-                            <h3 data-i18n="project_hypnose">Nuit de l'Hypnose</h3>
-                            <p class="project-desc" data-i18n="project_hypnose_desc">
-                                Conception de l'identité visuelle complète et des supports pour un événement caritatif.
-                            </p>
-                            <div class="project-footer-specs">
-                                <div class="tech-stack-pills">
-                                    <span class="tech-pill">Photoshop</span>
-                                    <span class="tech-pill">Illustrator</span>
-                                </div>
-                                <div class="project-card-arrow">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="projects/project-soirée-hypnose.html" class="stretched-link" aria-label="Voir le projet Nuit de l'Hypnose"></a>
-                    </div>
-
-                    <!-- Karting Photography -->
+                    <!-- Karting Photo Series -->
                     <div class="project-card fade-in-section" data-category="photo">
                         <div class="project-thumbnail">
                             <span class="project-badge-discipline">Photographie</span>
-                            <span class="project-aspect-ratio">Action & Vitesse</span>
-                            <img src="images/Photo/Karting/MG_2640.jpg" alt="Photographie Karting">
+                            <span class="project-aspect-ratio">3:2 • CANON</span>
+                            <img src="images/Photo/Karting/MG_2909.jpg" alt="Série Karting">
                         </div>
                         <div class="project-info">
                             <div class="project-header-meta">
-                                <span class="mono-tag" data-i18n="val_photographer">Photographe</span>
-                                <span class="project-year">2026</span>
+                                <span>LIGHTROOM / EOS 2000D</span>
+                                <span class="project-year">2025</span>
                             </div>
                             <h3 data-i18n="project_karting">Karting & Adrénaline</h3>
                             <p class="project-desc" data-i18n="project_karting_desc">
@@ -274,129 +206,44 @@
                             </p>
                             <div class="project-footer-specs">
                                 <div class="tech-stack-pills">
-                                    <span class="tech-pill">Canon EOS</span>
                                     <span class="tech-pill">Lightroom</span>
+                                    <span class="tech-pill">70-300mm</span>
                                 </div>
-                                <div class="project-card-arrow">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </div>
+                                <div class="project-card-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
                             </div>
+                            <a href="projects/project-karting.html" class="stretched-link" aria-label="Voir la série photo karting"></a>
                         </div>
-                        <a href="projects/project-karting.html" class="stretched-link" aria-label="Voir la série Karting"></a>
-                    </div>
-
-                    <!-- Portrait Shoot -->
-                    <div class="project-card fade-in-section" data-category="photo">
-                        <div class="project-thumbnail">
-                            <span class="project-badge-discipline">Photographie</span>
-                            <span class="project-aspect-ratio">Portrait Urbain</span>
-                            <img src="images/Photo/Portrait/_DSC2219.jpg" alt="Shooting Portrait Urbain">
-                        </div>
-                        <div class="project-info">
-                            <div class="project-header-meta">
-                                <span class="mono-tag" data-i18n="val_photographer">Photographe</span>
-                                <span class="project-year">2026</span>
-                            </div>
-                            <h3 data-i18n="project_portrait">Série Portrait & Mood</h3>
-                            <p class="project-desc" data-i18n="project_portrait_desc">
-                                Portraits en lumière ambiante naturelle avec traitement poussé des contrastes et de la texture.
-                            </p>
-                            <div class="project-footer-specs">
-                                <div class="tech-stack-pills">
-                                    <span class="tech-pill">Sony a6400</span>
-                                    <span class="tech-pill">Lightroom</span>
-                                </div>
-                                <div class="project-card-arrow">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="projects/project-portrait.html" class="stretched-link" aria-label="Voir les portraits"></a>
-                    </div>
-
-                    <!-- Fête de la Musique -->
-                    <div class="project-card fade-in-section" data-category="photo">
-                        <div class="project-thumbnail">
-                            <span class="project-badge-discipline">Photographie</span>
-                            <span class="project-aspect-ratio">Concert Live</span>
-                            <img src="images/Photo/FeteMusique/Copie de _DSC1709.jpg" alt="Fête de la Musique Live">
-                        </div>
-                        <div class="project-info">
-                            <div class="project-header-meta">
-                                <span class="mono-tag" data-i18n="val_photographer">Photographe</span>
-                                <span class="project-year">2026</span>
-                            </div>
-                            <h3 data-i18n="project_fete_musique">Fête de la Musique — Live</h3>
-                            <p class="project-desc" data-i18n="project_fete_musique_desc">
-                                Reportage de concerts à Arras capturant la vibration scénique et l'effervescence du public.
-                            </p>
-                            <div class="project-footer-specs">
-                                <div class="tech-stack-pills">
-                                    <span class="tech-pill">Sony a6400</span>
-                                    <span class="tech-pill">Lightroom</span>
-                                </div>
-                                <div class="project-card-arrow">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="projects/project-fete-musique.html" class="stretched-link" aria-label="Voir les photos de concert"></a>
-                    </div>
-
-                    <!-- Animal Photography -->
-                    <div class="project-card fade-in-section" data-category="photo">
-                        <div class="project-thumbnail">
-                            <span class="project-badge-discipline">Photographie</span>
-                            <span class="project-aspect-ratio">Série Nature</span>
-                            <img src="images/Photo/Chat/IMG_0940.jpg" alt="Photographie Féline">
-                        </div>
-                        <div class="project-info">
-                            <div class="project-header-meta">
-                                <span class="mono-tag" data-i18n="val_photographer">Photographe</span>
-                                <span class="project-year">2026</span>
-                            </div>
-                            <h3 data-i18n="project_photo">Série Féline & Nature</h3>
-                            <p class="project-desc" data-i18n="project_photo_desc">
-                                Série de captures en environnement naturel axée sur le regard, l'attitude et la composition.
-                            </p>
-                            <div class="project-footer-specs">
-                                <div class="tech-stack-pills">
-                                    <span class="tech-pill">Canon EOS</span>
-                                    <span class="tech-pill">Lightroom</span>
-                                </div>
-                                <div class="project-card-arrow">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="projects/project-photo.html" class="stretched-link" aria-label="Voir la série animale"></a>
                     </div>
                 </div>
 
-                <div style="text-align: center; margin-top: 4rem;" class="fade-in-section">
-                    <a href="projects.html" class="btn-secondary" data-i18n="see_all_projects">
-                        Consulter Tous les Projets <i class="fa-solid fa-arrow-right"></i>
+                <div style="text-align: center; margin-top: 3.5rem;" class="fade-in-section">
+                    <a href="projects.html" class="btn-primary">
+                        <span data-i18n="see_all_projects">Consulter Tous les Projets</span> <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Expertise & Post-Production Section -->
+        <!-- Expertise Overview Section -->
         <section id="expertise" class="page-section expertise">
             <div class="container">
                 <div class="section-header fade-in-section">
                     <div class="section-header-left">
                         <span class="section-tag" data-i18n="sect_expertise_tag">[ 02 // WORKFLOW & EXPERTISE ]</span>
-                        <h2 class="section-title" data-i18n="sect_expertise_title">Post-Production & Compétences</h2>
+                        <h2 class="section-title" data-i18n="sect_expertise_title">Post-Production & Savoir-Faire</h2>
                         <p class="section-desc" data-i18n="sect_expertise_desc">
                             Une maîtrise technique complète pour sublimer vos images de la prise de vue au master final.
                         </p>
                     </div>
+
+                    <a href="expertise.html" class="btn-secondary">
+                        En savoir plus <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
 
                 <div class="expertise-grid">
                     <div class="expertise-card fade-in-section">
-                        <span class="expertise-num">01 //</span>
+                        <span class="expertise-num">01 // EDIT</span>
                         <h3 data-i18n="exp_edit_title">Montage & Rythme</h3>
                         <p data-i18n="exp_edit_desc">
                             Construction narrative, découpage percutant, gestion fine de la timeline et synchronisation sonore au millième de seconde.
@@ -404,7 +251,7 @@
                     </div>
 
                     <div class="expertise-card fade-in-section">
-                        <span class="expertise-num">02 //</span>
+                        <span class="expertise-num">02 // MOTION</span>
                         <h3 data-i18n="exp_motion_title">Motion Design & VFX</h3>
                         <p data-i18n="exp_motion_desc">
                             Création d'animations graphiques fluides, typographie cinétique, incrustations, compositing et habillages vidéo.
@@ -412,7 +259,7 @@
                     </div>
 
                     <div class="expertise-card fade-in-section">
-                        <span class="expertise-num">03 //</span>
+                        <span class="expertise-num">03 // COLOR</span>
                         <h3 data-i18n="exp_color_title">Étalonnage & Color Science</h3>
                         <p data-i18n="exp_color_desc">
                             Normalisation LOG vers REC.709, harmonisation des plans, gestion des teintes et création de palettes cinématiques immersives.
@@ -420,7 +267,7 @@
                     </div>
 
                     <div class="expertise-card fade-in-section">
-                        <span class="expertise-num">04 //</span>
+                        <span class="expertise-num">04 // PHOTO</span>
                         <h3 data-i18n="exp_photo_title">Photographie & Retouche</h3>
                         <p data-i18n="exp_photo_desc">
                             Cadrage soigné, gestion de la lumière ambiante, retouche chromatique poussée et sublimation des textures.
@@ -430,26 +277,26 @@
 
                 <!-- Tools Showcase -->
                 <div class="tools-showcase fade-in-section">
-                    <h4 class="tools-title" data-i18n="tools_title">Suite Logicielle & Outils de Production</h4>
+                    <h3 class="tools-title" data-i18n="tools_title">Suite Logicielle & Outils de Production</h3>
                     <div class="tools-grid">
                         <div class="tool-item">
-                            <img src="images/Adobe_After_Effects_CC_icon.svg.png" alt="After Effects">
-                            <span>After Effects</span>
-                        </div>
-                        <div class="tool-item">
-                            <img src="images/Adobe_Premiere_Pro_CC_icon.svg.png" alt="Premiere Pro">
+                            <img src="images/Adobe_Premiere_Pro_CC_icon.svg.png" alt="Adobe Premiere Pro">
                             <span>Premiere Pro</span>
                         </div>
                         <div class="tool-item">
-                            <img src="images/Adobe_Photoshop_Lightroom_CC_logo.svg.png" alt="Lightroom">
-                            <span>Lightroom</span>
+                            <img src="images/Adobe_After_Effects_CC_icon.svg.png" alt="Adobe After Effects">
+                            <span>After Effects</span>
                         </div>
                         <div class="tool-item">
-                            <img src="images/Adobe_Photoshop_CC_icon.svg.png" alt="Photoshop">
+                            <img src="images/Adobe_Photoshop_CC_icon.svg.png" alt="Adobe Photoshop">
                             <span>Photoshop</span>
                         </div>
                         <div class="tool-item">
-                            <img src="images/Adobe_Illustrator_CC_icon.svg.png" alt="Illustrator">
+                            <img src="images/Adobe_Photoshop_Lightroom_CC_logo.svg.png" alt="Adobe Lightroom">
+                            <span>Lightroom</span>
+                        </div>
+                        <div class="tool-item">
+                            <img src="images/Adobe_Illustrator_CC_icon.svg.png" alt="Adobe Illustrator">
                             <span>Illustrator</span>
                         </div>
                     </div>
@@ -457,85 +304,22 @@
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="page-section">
-            <div class="container">
-                <div class="section-header fade-in-section">
-                    <div class="section-header-left">
-                        <span class="section-tag" data-i18n="sect_about_tag">[ 03 // VISION & PROFIL ]</span>
-                        <h2 class="section-title" data-i18n="sect_about_title">À Propos de XiEl</h2>
-                    </div>
-                </div>
+        <!-- Direct Contact Banner -->
+        <section class="contact-section">
+            <div class="contact-container fade-in-section">
+                <span class="section-tag" data-i18n="sect_contact_tag">[ 04 // CONTACT & COLLABORATION ]</span>
+                <h2 class="contact-heading" data-i18n="contact_heading">Donnons vie à votre prochain projet visuel.</h2>
+                <p class="contact-lead" data-i18n="contact_lead">
+                    Vous avez un projet de clip, un besoin en motion design, un montage vidéo ou une série photographique ? Parlons-en et créons quelque chose d'exceptionnel.
+                </p>
 
-                <div class="about-inner">
-                    <div class="about-bio-card fade-in-section">
-                        <p class="about-quote" data-i18n="about_quote">
-                            "La post-production n'est pas une simple étape technique, c'est l'art de donner un rythme, une tension et une âme durable à chaque image."
-                        </p>
-                        <p class="about-body-text" data-i18n="about_body">
-                            Je m'appelle Alexis Carpentier (XiEl). Passionné par l'art du montage, du motion design et de la prise de vue, je conçois des projets visuels qui allient exigence technique et narration forte. Mon approche repose sur une écoute attentive des besoins et une exécution millimétrée.
-                        </p>
-
-                        <div class="about-specs">
-                            <div class="spec-item">
-                                <span class="spec-label" data-i18n="spec_location_label">Localisation</span>
-                                <span class="spec-val">France / Remote</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label" data-i18n="spec_focus_label">Spécialisation</span>
-                                <span class="spec-val">Video, Motion & Photo</span>
-                            </div>
-                        </div>
-
-                        <div>
-                            <a href="CV.pdf" download class="btn-primary" data-i18n="download_cv">
-                                Télécharger le CV <i class="fa-solid fa-download"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="about-visual fade-in-section">
-                        <div class="about-metrics">
-                            <div class="metric-box">
-                                <span class="metric-num">100<span>%</span></span>
-                                <span class="metric-label" data-i18n="metric_precision">Précision & Rigueur</span>
-                            </div>
-                            <div class="metric-box">
-                                <span class="metric-num">4K<span>+</span></span>
-                                <span class="metric-label" data-i18n="metric_quality">Standard Master Ultra HD</span>
-                            </div>
-                            <div class="metric-box">
-                                <span class="metric-num">3<span>+</span></span>
-                                <span class="metric-label" data-i18n="metric_disciplines">Disciplines Maîtrisées</span>
-                            </div>
-                            <div class="metric-box">
-                                <span class="metric-num">24<span>fps</span></span>
-                                <span class="metric-label" data-i18n="metric_cinema">Sensibilité Cinéma</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <div class="contact-container fade-in-section">
-                    <span class="section-tag" data-i18n="sect_contact_tag">[ 04 // CONTACT & COLLABORATION ]</span>
-                    <h2 class="contact-heading" data-i18n="contact_heading">Donnons vie à votre prochain projet visuel.</h2>
-                    <p class="contact-lead" data-i18n="contact_lead">
-                        Vous avez un projet de clip, un besoin en motion design, un montage vidéo ou une série photographique ? Parlons-en et créons quelque chose d'exceptionnel.
-                    </p>
-
-                    <div class="contact-buttons-group">
-                        <a href="mailto:alexiscarpentier62@gmail.com" class="btn-primary" data-i18n="contact_email_btn">
-                            Me Contacter par Email <i class="fa-solid fa-paper-plane"></i>
-                        </a>
-                        <a href="https://instagram.com/crpt.alexis" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-                            <i class="fa-brands fa-instagram"></i> Instagram
-                        </a>
-                    </div>
+                <div class="contact-buttons-group">
+                    <a href="contact.html" class="btn-primary">
+                        Accéder au Contact <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="mailto:alexiscarpentier62@gmail.com" class="btn-secondary">
+                        <i class="fa-solid fa-envelope"></i> Email Direct
+                    </a>
                 </div>
             </div>
         </section>
@@ -545,20 +329,29 @@
     <footer>
         <div class="footer-inner">
             <div class="footer-brand">
-                <div class="footer-logo">XiEl<span class="accent-text">.</span></div>
-                <div class="footer-copyright">&copy; 2026 Alexis Carpentier — Tous droits réservés.</div>
+                <div class="footer-logo">Alexis<span class="accent-text">.</span></div>
+                <div class="footer-copyright">© 2026 Alexis Carpentier. Tous droits réservés.</div>
             </div>
 
             <div class="footer-socials">
-                <a href="mailto:alexiscarpentier62@gmail.com" class="footer-social-link"><i class="fa-solid fa-envelope"></i> Email</a>
-                <a href="https://instagram.com/crpt.alexis" target="_blank" rel="noopener noreferrer" class="footer-social-link"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                <a href="https://drive.google.com/drive/folders/1_y956-n0lu6Cf3o4KRdbzAObhT7Ay_kQ?usp=sharing" target="_blank" rel="noopener noreferrer" class="footer-social-link"><i class="fa-brands fa-google-drive"></i> Drive</a>
+                <a href="https://instagram.com/crpt.alexis" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                    <i class="fa-brands fa-instagram"></i> Instagram
+                </a>
+                <a href="mailto:alexiscarpentier62@gmail.com" class="footer-social-link">
+                    <i class="fa-solid fa-envelope"></i> Email
+                </a>
+                <a href="CV.pdf" target="_blank" class="footer-social-link">
+                    <i class="fa-solid fa-file-pdf"></i> CV
+                </a>
+                <a href="https://drive.google.com/drive/folders/1_y956-n0lu6Cf3o4KRdbzAObhT7Ay_kQ?usp=sharing" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                    <i class="fa-brands fa-google-drive"></i> Drive
+                </a>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" title="Retour en haut" aria-label="Retour en haut de page">
+    <button id="back-to-top" aria-label="Retour en haut de la page">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 

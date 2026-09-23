@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos — Alexis Carpentier | Post-Production & Motion</title>
+    <meta name="description" content="Découvrez le parcours, la vision artistique et l'approche de la post-production d'Alexis Carpentier (monteur vidéo, motion designer et photographe).">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css?v=2.1">
+</head>
+
+<body>
+    <!-- Navigation Header -->
+    <header>
+        <nav class="navbar">
+            <div class="brand-wrapper">
+                <a href="index.html" class="logo">Alexis<span class="logo-dot">.</span></a>
+                <div class="brand-meta">
+                    <span>POST-PROD & MOTION</span>
+                    <span class="status-live"><span class="rec-dot"></span><span data-i18n="nav_status_live">AVAILABLE FOR WORK</span></span>
+                </div>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav_home">Accueil</a></li>
+                <li><a href="projects.html" data-i18n="nav_projects">Projets</a></li>
+                <li><a href="expertise.html" data-i18n="nav_expertise">Expertise</a></li>
+                <li><a href="about.html" class="active" data-i18n="nav_about">À Propos</a></li>
+                <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button id="lang-toggle" class="lang-btn" aria-label="Changer de langue">
+                    <i class="fa-solid fa-globe"></i> <span>EN</span>
+                </button>
+                <button class="hamburger" aria-label="Menu mobile">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page Header Banner -->
+        <section class="page-header-banner">
+            <div class="container fade-in-section">
+                <span class="section-tag" data-i18n="sect_about_tag">[ 03 // VISION & PROFIL ]</span>
+                <h1 data-i18n="sect_about_title">À Propos d'Alexis Carpentier</h1>
+                <p>
+                    Créatif visuel passionné par le rythme, le sound design et la couleur, alliant rigueur technique et sensibilité cinématographique.
+                </p>
+            </div>
+        </section>
+
+        <!-- About In-Depth Section -->
+        <section class="page-section">
+            <div class="container">
+                <div class="about-inner">
+                    <!-- Bio Content -->
+                    <div class="about-bio-card fade-in-section">
+                        <blockquote class="about-quote" data-i18n="about_quote">
+                            "La post-production n'est pas une simple étape technique, c'est l'art de donner un rythme, une tension et une âme durable à chaque image."
+                        </blockquote>
+
+                        <p class="about-body-text" data-i18n="about_body">
+                            Je m'appelle Alexis Carpentier. Passionné par l'art du montage, du motion design et de la prise de vue, je conçois des projets visuels qui allient exigence technique et narration forte. Mon approche repose sur une écoute attentive des besoins et une exécution millimétrée.
+                        </p>
+
+                        <div class="about-specs">
+                            <div class="spec-item">
+                                <span class="spec-label" data-i18n="spec_location_label">Localisation</span>
+                                <span class="spec-val">France (Lens / Lille / Télétravail)</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label" data-i18n="spec_focus_label">Spécialisation</span>
+                                <span class="spec-val">Montage • Motion • Color Grading</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Statut</span>
+                                <span class="spec-val" style="color: var(--accent-red);">Disponible pour projets</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Langues</span>
+                                <span class="spec-val">Français (Natif) • Anglais</span>
+                            </div>
+                        </div>
+
+                        <div class="about-actions" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="CV.pdf" target="_blank" class="btn-primary">
+                                <i class="fa-solid fa-file-arrow-down"></i> <span data-i18n="download_cv">Télécharger le CV</span>
+                            </a>
+                            <a href="contact.html" class="btn-secondary" data-i18n="hero_cta_contact">
+                                Me Contacter <i class="fa-solid fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Visual & Key Metrics -->
+                    <div class="about-visual fade-in-section">
+                        <!-- Profile Card -->
+                        <div class="viewfinder-card" style="margin: 0 auto; max-width: 360px;">
+                            <div class="crop-mark-tr"></div>
+                            <div class="crop-mark-bl"></div>
+
+                            <div class="viewfinder-frame">
+                                <img src="images/AlexisC.jpg" alt="Alexis Carpentier"
+                                    onerror="this.src='https://ui-avatars.com/api/?name=Alexis+Carpentier&background=181b22&color=f8fafc&size=400'">
+
+                                <div class="osd-overlay">
+                                    <div class="osd-top">
+                                        <span class="live-timecode" id="live-tc">00:00:24:12</span>
+                                        <span>4K DCI • 24.00 FPS</span>
+                                    </div>
+                                    <div class="osd-crosshair"></div>
+                                    <div class="osd-bottom">
+                                        <span>PRORES 422 HQ</span>
+                                        <span class="accent-text">REC [●]</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Metrics Grid -->
+                        <div class="about-metrics">
+                            <div class="metric-box">
+                                <div class="metric-num">100<span>%</span></div>
+                                <div class="metric-label" data-i18n="metric_precision">Précision & Rigueur</div>
+                            </div>
+                            <div class="metric-box">
+                                <div class="metric-num">4K<span>+</span></div>
+                                <div class="metric-label" data-i18n="metric_quality">Standard Master Ultra HD</div>
+                            </div>
+                            <div class="metric-box">
+                                <div class="metric-num">04</div>
+                                <div class="metric-label" data-i18n="metric_disciplines">Disciplines Maîtrisées</div>
+                            </div>
+                            <div class="metric-box">
+                                <div class="metric-num">24<span>FPS</span></div>
+                                <div class="metric-label" data-i18n="metric_cinema">Sensibilité Cinéma</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo">Alexis<span class="accent-text">.</span></div>
+                <div class="footer-copyright">© 2026 Alexis Carpentier. Tous droits réservés.</div>
+            </div>
+
+            <div class="footer-socials">
+                <a href="https://instagram.com/crpt.alexis" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                    <i class="fa-brands fa-instagram"></i> Instagram
+                </a>
+                <a href="mailto:alexiscarpentier62@gmail.com" class="footer-social-link">
+                    <i class="fa-solid fa-envelope"></i> Email
+                </a>
+                <a href="CV.pdf" target="_blank" class="footer-social-link">
+                    <i class="fa-solid fa-file-pdf"></i> CV
+                </a>
+                <a href="https://drive.google.com/drive/folders/1_y956-n0lu6Cf3o4KRdbzAObhT7Ay_kQ?usp=sharing" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                    <i class="fa-brands fa-google-drive"></i> Drive
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Retour en haut de la page">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js?v=2.1"></script>
+</body>
+
+</html>

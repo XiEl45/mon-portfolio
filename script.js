@@ -1,5 +1,5 @@
 /**
- * XiEl — Portfolio Scripts (Post-Production, Video & Motion Design)
+ * Alexis Carpentier — Portfolio Scripts (Post-Production, Video & Motion Design)
  * Internationalization, Live Timecode, Project Filtering, Modal & Interactions
  */
 
@@ -148,9 +148,9 @@ const translations = {
         p_astrophoto_tools_2: "Logiciel : Adobe Lightroom",
         p_astrophoto_resources_1: "Accédez aux fichiers sur le Drive.",
 
-        // Expertise Section
+        // Expertise Section / Page
         sect_expertise_tag: "[ 02 // WORKFLOW & EXPERTISE ]",
-        sect_expertise_title: "Post-Production & Compétences",
+        sect_expertise_title: "Post-Production & Savoir-Faire",
         sect_expertise_desc: "Une maîtrise technique complète pour sublimer vos images de la prise de vue au master final.",
         exp_edit_title: "Montage & Rythme",
         exp_edit_desc: "Construction narrative, découpage percutant, gestion fine de la timeline et synchronisation sonore au millième de seconde.",
@@ -162,11 +162,11 @@ const translations = {
         exp_photo_desc: "Cadrage soigné, gestion de la lumière ambiante, retouche chromatique poussée et sublimation des textures.",
         tools_title: "Suite Logicielle & Outils de Production",
 
-        // About Section
+        // About Section / Page
         sect_about_tag: "[ 03 // VISION & PROFIL ]",
-        sect_about_title: "À Propos de XiEl",
+        sect_about_title: "À Propos d'Alexis Carpentier",
         about_quote: "\"La post-production n'est pas une simple étape technique, c'est l'art de donner un rythme, une tension et une âme durable à chaque image.\"",
-        about_body: "Je m'appelle Alexis Carpentier (XiEl). Passionné par l'art du montage, du motion design et de la prise de vue, je conçois des projets visuels qui allient exigence technique et narration forte. Mon approche repose sur une écoute attentive des besoins et une exécution millimétrée.",
+        about_body: "Je m'appelle Alexis Carpentier. Passionné par l'art du montage, du motion design et de la prise de vue, je conçois des projets visuels qui allient exigence technique et narration forte. Mon approche repose sur une écoute attentive des besoins et une exécution millimétrée.",
         spec_location_label: "Localisation",
         spec_focus_label: "Spécialisation",
         download_cv: "Télécharger le CV",
@@ -175,7 +175,7 @@ const translations = {
         metric_disciplines: "Disciplines Maîtrisées",
         metric_cinema: "Sensibilité Cinéma",
 
-        // Contact Section
+        // Contact Section / Page
         sect_contact_tag: "[ 04 // CONTACT & COLLABORATION ]",
         contact_heading: "Donnons vie à votre prochain projet visuel.",
         contact_lead: "Vous avez un projet de clip, un besoin en motion design, un montage vidéo ou une série photographique ? Parlons-en et créons quelque chose d'exceptionnel.",
@@ -248,31 +248,31 @@ const translations = {
 
         project_clip_iut: "Academy Promotional Video",
         h1_clip_iut: "Promotional Clip — IUT",
-        project_clip_iut_desc: "Dynamic promotional video highlighting student life and modern campus facilities.",
+        project_clip_iut_desc: "Dynamic promotional film highlighting academic campus life, faculties, and studio facilities.",
 
-        project_hypnose: "Hypnosis Night",
-        h1_hypnose: "Visual Identity — Hypnosis Night",
-        project_hypnose_desc: "Complete visual identity design and print/digital assets for a charity event.",
+        project_hypnose: "Hypnosis Gala Night",
+        h1_hypnose: "Visual Identity — Hypnosis Gala",
+        project_hypnose_desc: "Complete visual identity design and promotional collateral for a charity event in Lens.",
 
-        project_karting: "Karting & Speed",
-        h1_karting: "Photo Series — Karting & Racing",
-        project_karting_desc: "High-speed trackside captures freezing adrenaline, driver focus, and racing motion.",
+        project_karting: "Karting & Speed Series",
+        h1_karting: "Photo Series — Karting & Pacing",
+        project_karting_desc: "High-speed track photography capturing intense racing lines, spray, and driver focus.",
 
-        project_portrait: "Portrait & Mood Series",
+        project_portrait: "Urban Portrait Series",
         h1_portrait: "Photo Series — Urban Portraits",
-        project_portrait_desc: "Natural light portraits with meticulous skin tone treatment and atmospheric lighting.",
+        project_portrait_desc: "Natural light outdoor portraits focusing on skin tone grading, framing, and architectural textures.",
 
-        project_fete_musique: "Fête de la Musique — Live",
-        h1_fete_musique: "Concert Photography — Fête de la Musique",
-        project_fete_musique_desc: "Live concert reportage in Arras capturing stage energy and audience emotion.",
+        project_fete_musique: "Music Festival Live",
+        h1_fete_musique: "Live Concert Photo Coverage",
+        project_fete_musique_desc: "Concert reportage in Arras capturing stage lighting dynamics and live crowd energy.",
 
-        project_photo: "Feline & Nature Series",
-        h1_photo: "Photo Series — Feline Observation",
-        project_photo_desc: "Wildlife exploration series focusing on gaze, textures, and precise framing.",
+        project_photo: "Feline Natural Study",
+        h1_photo: "Photo Series — Feline Study",
+        project_photo_desc: "Wildlife capture series focusing on eye sharpness, natural lighting, and animal demeanor.",
 
-        project_astrophoto: "Astrophotography",
+        project_astrophoto: "Astrophotography Night",
         h1_astrophoto: "Photo Series — Astrophotography",
-        project_astrophoto_desc: "Long exposure night sky captures of celestial landscapes with advanced noise reduction.",
+        project_astrophoto_desc: "Long exposure starscape captures, night scenery, and precise noise reduction post-processing.",
 
         // Project Detail Structure
         back_projects: "← BACK TO PROJECTS",
@@ -280,209 +280,180 @@ const translations = {
         p_approach: "Creative & Technical Approach",
         p_tools: "Tools & Technologies",
         p_resources: "Files & Deliverables",
-        p_view_drive: "Access Google Drive Folder",
+        p_view_drive: "Access Drive Folder",
 
         // Project Descriptions
-        p_headlock_desc_1: "A motion design project set to the track 'Headlock'. This project explores visual sound synchronization and rhythmic geometric animation.",
-        p_headlock_approach_1: "The goal was to create an immersive visual experience perfectly locked to the audio tempo, using fluid easing curves and punchy transitions.",
+        p_headlock_desc_1: "A rhythmic motion design project synchronized to the track 'Headlock'. Explores visual sound matching and dynamic geometric transitions.",
+        p_headlock_approach_1: "The goal was an immersive visual journey locked tightly to the musical tempo with smooth easing curves and impactful cuts.",
         p_headlock_tools_1: "Software: Adobe After Effects",
-        p_headlock_resources_1: "Project source files and full renders are available on Google Drive.",
+        p_headlock_resources_1: "Full project source and final render available on Google Drive.",
 
-        p_clip_desc_1: "Music video produced as part of digital media coursework, demonstrating editing, compositing, and color grading skills.",
-        p_clip_approach_1: "Building a compelling visual atmosphere aligned with the music, balancing fast-paced rhythmic cuts and cinematic storytelling.",
+        p_clip_desc_1: "Music video produced during digital creation coursework, highlighting editing, compositing, and color grading competencies.",
+        p_clip_approach_1: "Creating a distinct visual atmosphere matching the music's cadence, balancing tight rhythm with thoughtful narrative framing.",
         p_clip_tools_1: "Software: Adobe Premiere Pro, Adobe After Effects, Adobe Photoshop",
-        p_clip_resources_1: "Access the full video render on Google Drive.",
+        p_clip_resources_1: "Watch the full video on Google Drive.",
 
-        p_clip_iut_desc_1: "Promotional video showcasing academic programs, campus culture, and state-of-the-art facilities.",
-        p_clip_iut_approach_1: "Dynamic camera movement, engaging framing, and punchy editing to capture authentic campus energy.",
+        p_clip_iut_desc_1: "Promotional video showcasing university curricula, student community, and modern campus infrastructure.",
+        p_clip_iut_approach_1: "Dynamic gimbal work, immersive framing, and punchy editing capturing authentic campus vitality.",
         p_clip_iut_tools_1: "Software: Adobe Premiere Pro, Adobe After Effects",
-        p_clip_iut_resources_1: "Access the video on Google Drive.",
+        p_clip_iut_resources_1: "Access video files on Google Drive.",
 
-        p_hypnose_desc_1: "Creation of the full visual branding for the second edition of Hypnosis Night in Lens, supporting a charitable cause.",
-        p_hypnose_approach_1: "Curating a moody, modern palette (night blues and gold), impactful typography, and adapting across posters, social media, and tickets.",
+        p_hypnose_desc_1: "Complete visual identity design for the second edition of the Charity Hypnosis Night in Lens.",
+        p_hypnose_approach_1: "Developing a mysterious, upscale nocturnal and golden color palette, impactful typography across posters, social media, and tickets.",
         p_hypnose_tools_1: "Software: Adobe Photoshop, Adobe Illustrator",
-        p_hypnose_resources_1: "Access all project design deliverables on Google Drive.",
+        p_hypnose_resources_1: "Access full graphic asset package on Google Drive.",
 
-        p_karting_desc_1: "A photography series dedicated to speed, adrenaline, and precision on the karting track.",
-        p_karting_approach_1: "Using fast shutter speeds to freeze trackside action, tire spray, and intense driver focus, paired with punchy color grading.",
+        p_karting_desc_1: "High-speed photography series dedicated to adrenaline, braking zones, and track precision in go-kart racing.",
+        p_karting_approach_1: "Ultra-fast shutter speeds freezing spray and focused glances under visors, paired with contrast-rich color grading.",
         p_karting_tools_1: "Gear: Canon EOS 2000D, 70-300mm f/4-6.3",
         p_karting_tools_2: "Software: Adobe Lightroom",
-        p_karting_resources_1: "Access the full photo gallery on Google Drive.",
+        p_karting_resources_1: "Access high-resolution gallery on Google Drive.",
 
-        p_portrait_desc_1: "Outdoor lifestyle portrait session capturing authentic mood, texture, and natural ambient light.",
-        p_portrait_approach_1: "Shallow depth of field, meticulous skin tone calibration, and compositions framed by urban architecture.",
+        p_portrait_desc_1: "Natural outdoor portrait session exploring authentic expressions, skin tones, and urban ambient lighting.",
+        p_portrait_approach_1: "Shallow depth of field, delicate skin tonality grading, and deliberate framing guided by architectural geometry.",
         p_portrait_tools_1: "Gear: Sony a6400, 16-50mm & 55-210mm",
         p_portrait_tools_2: "Software: Adobe Lightroom",
-        p_portrait_resources_1: "Access the full photo set on Google Drive.",
+        p_portrait_resources_1: "Access complete photoshoot on Google Drive.",
 
-        p_fete_musique_desc_1: "Photo reportage capturing live performances and atmosphere during the Fête de la Musique in Arras.",
-        p_fete_musique_approach_1: "Mastering volatile stage lighting, balancing wide crowd perspectives and tight artist close-ups.",
+        p_fete_musique_desc_1: "Concert reportage capturing stage vibrations, artist expressions, and festival atmosphere in Arras.",
+        p_fete_musique_approach_1: "Fast low-light handling, dynamic framing between wide atmosphere shots and intimate performance close-ups.",
         p_fete_musique_tools_1: "Gear: Sony a6400, 16-50mm & 55-210mm",
         p_fete_musique_tools_2: "Software: Adobe Lightroom",
-        p_fete_musique_resources_1: "Access the complete event album on Google Drive.",
+        p_fete_musique_resources_1: "Access full live photo album on Google Drive.",
 
-        p_photo_desc_1: "Wildlife series capturing the feline gaze, agile movement, and natural textures.",
-        p_photo_approach_1: "Leveraging soft natural side lighting and razor-sharp focal placement to highlight texture.",
+        p_photo_desc_1: "Wildlife and feline study exploring natural curiosity, eye detail, and texture in outdoor environments.",
+        p_photo_approach_1: "Harnessing natural low-angle sunlight and pinpoint focus on eyes to highlight fur texture and depth.",
         p_photo_tools_1: "Gear: Canon EOS 2000D, 18-55mm f/3.5-5.6",
         p_photo_tools_2: "Software: Adobe Lightroom",
-        p_photo_resources_1: "Access the full image files on Google Drive.",
+        p_photo_resources_1: "Access full set on Google Drive.",
 
-        p_astrophoto_desc_1: "Photography series capturing night skies, celestial bodies, and landscapes under the stars.",
-        p_astrophoto_approach_1: "Long exposure tripod captures, manual infinity focus, and digital post-processing with careful noise control.",
-        p_astrophoto_tools_1: "Gear: Sony a6400, Tripod",
+        p_astrophoto_desc_1: "Night sky photography series capturing constellations, moonlit horizons, and starry depths.",
+        p_astrophoto_approach_1: "Long exposure tripod captures, manual infinity focus, and refined digital noise suppression in post-processing.",
+        p_astrophoto_tools_1: "Gear: Sony a6400, Sturdy Tripod",
         p_astrophoto_tools_2: "Software: Adobe Lightroom",
-        p_astrophoto_resources_1: "Access celestial captures on Google Drive.",
+        p_astrophoto_resources_1: "Access raw and graded files on Google Drive.",
 
-        // Expertise Section
+        // Expertise Section / Page
         sect_expertise_tag: "[ 02 // WORKFLOW & EXPERTISE ]",
         sect_expertise_title: "Post-Production & Capabilities",
-        sect_expertise_desc: "End-to-end technical mastery to elevate your visuals from production to final master.",
+        sect_expertise_desc: "End-to-end technical proficiency elevating your footage from capture to broadcast master.",
         exp_edit_title: "Editing & Rhythm",
-        exp_edit_desc: "Narrative structuring, impactful cutting, timeline optimization, and sub-frame audio synchronization.",
+        exp_edit_desc: "Narrative pacing, sharp cutting, timeline precision, and frame-accurate audio synchronization.",
         exp_motion_title: "Motion Design & VFX",
-        exp_motion_desc: "Fluid graphic animations, kinetic typography, keying, compositing, and video branding.",
+        exp_motion_desc: "Kinetic typography, seamless graphics, screen replacements, compositing, and video branding.",
         exp_color_title: "Color Grading & Science",
-        exp_color_desc: "LOG to REC.709 normalization, shot matching, skin tone protection, and cinematic look creation.",
+        exp_color_desc: "LOG to REC.709 conversion, shot matching, skin tone preservation, and cinematic palette development.",
         exp_photo_title: "Photography & Retouching",
-        exp_photo_desc: "Meticulous framing, ambient light control, color correction, and high-end texture enhancement.",
-        tools_title: "Production Software & Toolkit",
+        exp_photo_desc: "Precise framing, natural light management, color grading, and texture refinement.",
+        tools_title: "Software Suite & Production Gear",
 
-        // About Section
+        // About Section / Page
         sect_about_tag: "[ 03 // VISION & PROFILE ]",
-        sect_about_title: "About XiEl",
-        about_quote: "\"Post-production is not merely a technical phase—it is the art of giving rhythm, tension, and lasting soul to every frame.\"",
-        about_body: "I am Alexis Carpentier (XiEl). Passionate about the art of video editing, motion design, and photography, I create visual projects blending technical precision with powerful storytelling.",
+        sect_about_title: "About Alexis Carpentier",
+        about_quote: "\"Post-production is not just technical assembly—it is the art of giving pacing, tension, and lasting emotion to every frame.\"",
+        about_body: "I am Alexis Carpentier. Passionate about video editing, motion graphics, and photography, I craft visual experiences combining strict technical rigor with compelling narrative flow.",
         spec_location_label: "Location",
-        spec_focus_label: "Focus",
+        spec_focus_label: "Focus Area",
         download_cv: "Download Resume",
         metric_precision: "Precision & Rigor",
         metric_quality: "Ultra HD Master Standard",
         metric_disciplines: "Core Disciplines",
-        metric_cinema: "Cinematic Pacing",
+        metric_cinema: "Cinematic Sensitivity",
 
-        // Contact Section
+        // Contact Section / Page
         sect_contact_tag: "[ 04 // CONTACT & COLLABORATION ]",
-        contact_heading: "Let's bring your next visual project to life.",
-        contact_lead: "Looking for a music video editor, motion designer, colorist, or photographer? Let's connect and craft something remarkable.",
+        contact_heading: "Let's bring your next visual vision to life.",
+        contact_lead: "Looking for a music video editor, motion designer, promotional video, or photo coverage? Let's connect and craft something exceptional.",
         contact_email_btn: "Contact via Email",
 
         // Modal
         modal_title: "Get in Touch",
-        modal_subtitle: "Copy my direct contact details to start a collaboration.",
+        modal_subtitle: "Copy my direct contact information to start a collaboration.",
         modal_btn_copy: "COPY",
         modal_btn_done: "COPIED!",
-        modal_feedback: "Copied to clipboard:"
+        modal_feedback: "Address copied to clipboard:"
     }
 };
 
-/**
- * Update Language throughout the DOM
- */
-function updateLanguage(lang) {
-    localStorage.setItem('preferredLanguage', lang);
-    
-    document.querySelectorAll('[data-i18n]').forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        if (translations[lang] && translations[lang][key]) {
-            // If element contains child icons or specific elements, preserve them or handle cleanly
-            const icon = element.querySelector('i');
-            if (icon) {
-                const iconHTML = icon.outerHTML;
-                element.innerHTML = `${translations[lang][key]} ${iconHTML}`;
-            } else {
-                element.innerText = translations[lang][key];
-            }
-        }
-    });
-
-    // Update language toggle button
-    const toggleBtn = document.getElementById('lang-toggle');
-    if (toggleBtn) {
-        const span = toggleBtn.querySelector('span');
-        if (span) {
-            span.innerText = lang === 'en' ? 'FR' : 'EN';
-        }
-    }
-}
-
-/**
- * Initialize Everything on DOMContentLoaded
- */
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Language Initialization
-    const savedLang = localStorage.getItem('preferredLanguage') || 'fr';
-    updateLanguage(savedLang);
+    // 1. Language Preference & Toggle
+    const currentLang = localStorage.getItem('preferredLanguage') || 'fr';
+    setLanguage(currentLang);
 
-    const langToggle = document.getElementById('lang-toggle');
-    if (langToggle) {
-        langToggle.addEventListener('click', () => {
-            const currentLang = localStorage.getItem('preferredLanguage') || 'fr';
-            const newLang = currentLang === 'en' ? 'fr' : 'en';
-            updateLanguage(newLang);
+    const langToggleBtn = document.getElementById('lang-toggle');
+    if (langToggleBtn) {
+        langToggleBtn.addEventListener('click', () => {
+            const activeLang = localStorage.getItem('preferredLanguage') || 'fr';
+            const nextLang = activeLang === 'fr' ? 'en' : 'fr';
+            setLanguage(nextLang);
         });
     }
 
-    // 2. Mobile Hamburger Navigation
+    function setLanguage(lang) {
+        localStorage.setItem('preferredLanguage', lang);
+        document.documentElement.lang = lang;
+
+        const langSpan = document.querySelector('#lang-toggle span');
+        if (langSpan) {
+            langSpan.textContent = lang === 'fr' ? 'EN' : 'FR';
+        }
+
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang] && translations[lang][key]) {
+                el.textContent = translations[lang][key];
+            }
+        });
+    }
+
+    // 2. Mobile Hamburger Menu
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
     if (hamburger && navLinks) {
         hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
         });
 
-        // Close menu when clicking a link
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
                 navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
             });
         });
     }
 
-    // 3. Live 24 FPS Timecode Generator
-    const timecodeElem = document.getElementById('live-tc');
-    if (timecodeElem) {
-        let hours = 0;
-        let minutes = 1;
-        let seconds = 24;
-        let frames = 12;
-
-        setInterval(() => {
-            frames++;
-            if (frames >= 24) {
-                frames = 0;
-                seconds++;
-                if (seconds >= 60) {
-                    seconds = 0;
-                    minutes++;
-                    if (minutes >= 60) {
-                        minutes = 0;
-                        hours = (hours + 1) % 24;
-                    }
-                }
-            }
-            const pad = (n) => String(n).padStart(2, '0');
-            timecodeElem.textContent = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}:${pad(frames)}`;
-        }, 1000 / 24);
+    // 3. Live Timecode Generator
+    const tcElement = document.getElementById('live-tc');
+    if (tcElement) {
+        function updateTimecode() {
+            const now = new Date();
+            const hrs = String(now.getHours()).padStart(2, '0');
+            const mins = String(now.getMinutes()).padStart(2, '0');
+            const secs = String(now.getSeconds()).padStart(2, '0');
+            const frames = String(Math.floor((now.getMilliseconds() / 1000) * 24)).padStart(2, '0');
+            tcElement.textContent = `${hrs}:${mins}:${secs}:${frames}`;
+        }
+        setInterval(updateTimecode, 1000 / 24);
+        updateTimecode();
     }
 
-    // 4. Project Filtering System
+    // 4. Project Filtering (on Projects page or section)
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
+    const projectCards = document.querySelectorAll('.project-card[data-category]');
 
     if (filterButtons.length > 0 && projectCards.length > 0) {
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterButtons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
 
-                const filter = btn.getAttribute('data-filter');
+                const filterValue = button.getAttribute('data-filter');
 
                 projectCards.forEach(card => {
-                    const category = card.getAttribute('data-category');
-                    if (filter === 'all' || category === filter) {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (filterValue === 'all' || cardCategory === filterValue) {
                         card.style.display = 'flex';
                         setTimeout(() => {
                             card.style.opacity = '1';
@@ -490,7 +461,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         }, 50);
                     } else {
                         card.style.opacity = '0';
-                        card.style.transform = 'translateY(15px)';
+                        card.style.transform = 'translateY(12px)';
                         setTimeout(() => {
                             card.style.display = 'none';
                         }, 250);
@@ -520,38 +491,59 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollObserver.observe(el);
     });
 
-    // 6. Navigation ScrollSpy
-    const sections = document.querySelectorAll('section[id]');
-    const navItems = document.querySelectorAll('.nav-links li a[href^="#"]');
+    // 6. Navigation Active State Handling (Multi-page)
+    const currentPath = window.location.pathname;
+    const pageNavLinks = document.querySelectorAll('.nav-links li a');
+    let pageFound = false;
 
-    function highlightNavigation() {
-        const scrollY = window.scrollY;
+    pageNavLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href) {
+            const cleanHref = href.split('#')[0].replace('../', '');
+            const cleanCurrent = currentPath.substring(currentPath.lastIndexOf('/') + 1);
 
-        sections.forEach(current => {
-            const sectionHeight = current.offsetHeight;
-            const sectionTop = current.offsetTop - 120;
-            const sectionId = current.getAttribute('id');
-
-            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                navItems.forEach(item => {
-                    item.classList.remove('active');
-                    if (item.getAttribute('href') === `#${sectionId}`) {
-                        item.classList.add('active');
-                    }
-                });
+            if (cleanHref && cleanCurrent && (cleanHref === cleanCurrent || (cleanHref === 'index.html' && (cleanCurrent === '' || cleanCurrent === 'index.html')))) {
+                pageNavLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                pageFound = true;
             }
-        });
-
-        if (scrollY < 120) {
-            navItems.forEach(item => item.classList.remove('active'));
-            const homeLink = document.querySelector('.nav-links li a[href="#home"]');
-            if (homeLink) homeLink.classList.add('active');
         }
-    }
+    });
 
-    if (sections.length > 0 && navItems.length > 0) {
-        window.addEventListener('scroll', highlightNavigation);
-        highlightNavigation();
+    // Fallback scrollspy if on index.html with in-page anchors
+    if (!pageFound) {
+        const sections = document.querySelectorAll('section[id]');
+        const anchorNavItems = document.querySelectorAll('.nav-links li a[href^="#"]');
+
+        function highlightNavigation() {
+            const scrollY = window.scrollY;
+
+            sections.forEach(current => {
+                const sectionHeight = current.offsetHeight;
+                const sectionTop = current.offsetTop - 120;
+                const sectionId = current.getAttribute('id');
+
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    anchorNavItems.forEach(item => {
+                        item.classList.remove('active');
+                        if (item.getAttribute('href') === `#${sectionId}`) {
+                            item.classList.add('active');
+                        }
+                    });
+                }
+            });
+
+            if (scrollY < 120) {
+                anchorNavItems.forEach(item => item.classList.remove('active'));
+                const homeLink = document.querySelector('.nav-links li a[href="#home"], .nav-links li a[href="index.html"]');
+                if (homeLink) homeLink.classList.add('active');
+            }
+        }
+
+        if (sections.length > 0 && anchorNavItems.length > 0) {
+            window.addEventListener('scroll', highlightNavigation);
+            highlightNavigation();
+        }
     }
 
     // 7. Back to Top Button
@@ -581,6 +573,9 @@ document.addEventListener('DOMContentLoaded', () => {
  * Initialize Quick Contact Modal
  */
 function initContactModal() {
+    // Avoid creating duplicate modal if already present
+    if (document.getElementById('contactModal')) return;
+
     const modalHTML = `
     <div id="contactModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal-content">
@@ -620,14 +615,16 @@ function initContactModal() {
         document.body.style.overflow = 'auto';
     }
 
-    // Trigger modal when clicking specific contact action
-    const contactTrigger = document.querySelector('a[href="mailto:alexiscarpentier62@gmail.com"].btn-primary');
-    if (contactTrigger) {
-        contactTrigger.addEventListener('click', (e) => {
-            e.preventDefault();
-            openModal();
+    // Trigger modal when clicking quick modal buttons
+    document.querySelectorAll('.open-contact-modal, a[href="mailto:alexiscarpentier62@gmail.com"].btn-primary').forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            // If on contact.html or external link, don't necessarily override unless intended
+            if (trigger.classList.contains('open-contact-modal')) {
+                e.preventDefault();
+                openModal();
+            }
         });
-    }
+    });
 
     closeBtn.addEventListener('click', closeModal);
     modal.addEventListener('click', (e) => {
