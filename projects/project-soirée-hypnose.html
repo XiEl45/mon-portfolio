@@ -4,90 +4,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Identité Visuelle Festival - Alexis</title>
+    <title>Identité Visuelle Nuit de l'Hypnose — XiEl</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css?v=2.1">
 </head>
 
 <body>
+    <!-- Header Navigation -->
     <header>
         <nav class="navbar">
-            <div class="logo">Alexis<span>.</span></div>
+            <div class="brand-wrapper">
+                <a href="../index.html" class="logo">XiEl<span class="logo-dot">.</span></a>
+                <div class="brand-meta">
+                    <span>POST-PROD & MOTION</span>
+                    <span class="status-live"><span class="rec-dot"></span><span data-i18n="nav_status_live">AVAILABLE FOR WORK</span></span>
+                </div>
+            </div>
+
             <ul class="nav-links">
-                <li><a href="../index.html#home" data-i18n="nav_home">Status / Home</a></li>
-                <li><a href="../index.html#projects" data-i18n="nav_projects">Quests / Projects</a></li>
-                <li><a href="../contact.html" data-i18n="nav_about">Summon / Contact</a></li>
-                <li><button id="lang-toggle" class="lang-btn">EN</button></li>
+                <li><a href="../index.html#home" data-i18n="nav_home">Accueil</a></li>
+                <li><a href="../projects.html" class="active" data-i18n="nav_projects">Projets</a></li>
+                <li><a href="../index.html#expertise" data-i18n="nav_expertise">Expertise</a></li>
+                <li><a href="../index.html#about" data-i18n="nav_about">À Propos</a></li>
+                <li><a href="../index.html#contact" data-i18n="nav_contact">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+
+            <div class="nav-actions">
+                <button id="lang-toggle" class="lang-btn" aria-label="Changer de langue">
+                    <i class="fa-solid fa-globe"></i> <span>EN</span>
+                </button>
+                <button class="hamburger" aria-label="Menu mobile">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="page-section">
+        <section class="project-detail-section">
             <div class="container">
-                <a href="../projects.html" class="back-link" data-i18n="back_quests">← RETURN TO QUEST LOG</a>
+                <a href="../projects.html" class="project-detail-back" data-i18n="back_projects">
+                    <i class="fa-solid fa-arrow-left"></i> RETOUR AUX PROJETS
+                </a>
 
-                <div class="project-detail-header">
-                    <h1 data-i18n="h1_hypnose">Event Horizon (Hypnosis Night)</h1>
-                    <div class="project-meta">
-                        <span><strong data-i18n="meta_cat">CATEGORY:</strong> <span
-                                data-i18n="val_comm">Communication</span></span>
-                        <span><strong data-i18n="meta_year">YEAR:</strong> 2025</span>
-                        <span><strong data-i18n="meta_role">ROLE:</strong> <span data-i18n="val_visual_graphist">Visual
-                                Graphist</span></span>
+                <div class="project-hero-header">
+                    <h1 data-i18n="h1_hypnose">Identité Visuelle — Nuit de l'Hypnose</h1>
+                    <div class="project-meta-grid">
+                        <div class="meta-block">
+                            <span class="meta-label" data-i18n="meta_cat">Catégorie</span>
+                            <span class="meta-value" data-i18n="val_visual_graphist">Graphisme & DA</span>
+                        </div>
+                        <div class="meta-block">
+                            <span class="meta-label" data-i18n="meta_year">Année</span>
+                            <span class="meta-value">2025</span>
+                        </div>
+                        <div class="meta-block">
+                            <span class="meta-label" data-i18n="meta_role">Rôle</span>
+                            <span class="meta-value">Directeur Artistique</span>
+                        </div>
+                        <div class="meta-block">
+                            <span class="meta-label">Supports</span>
+                            <span class="meta-value">Print, Web & Billetterie</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-media">
-                    <img src="../images/MOCKUP 3.png" alt="Mockup Soirée Hypnose"
-                        style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="project-media-main" style="display: flex; justify-content: center; align-items: center; padding: 2rem; background: #0c0e12;">
+                    <img src="../images/Logo_emblematique-03.png" alt="Affiche Nuit de l'Hypnose" style="max-height: 480px; width: auto; object-fit: contain;">
                 </div>
 
-                <div class="project-content">
-                    <h2 data-i18n="p_the_project">Mission Brief</h2>
-                    <p class="system-msg" style="margin-bottom: 1rem;" data-i18n="p_hypnose_msg">> INITIALIZING PROJECT
-                        DATA...</p>
-                    <p data-i18n="p_hypnose_desc_1">Create a strong and modern visual identity for the second edition of
-                        the Hypnosis Night in Lens.
-                        This project is organized by a group of TC students who called upon my team to create a visual
-                        identity for the event.</p>
+                <div class="project-content-layout">
+                    <div class="project-article">
+                        <h2 data-i18n="p_the_project">Le Projet</h2>
+                        <p data-i18n="p_hypnose_desc_1">
+                            Création d'une identité visuelle complète pour la deuxième édition de la Nuit de l'Hypnose à Lens, organisée au profit d'une association caritative.
+                        </p>
 
-                    <h2 data-i18n="p_approach">Outcome Analysis</h2>
-                    <p data-i18n="p_hypnose_approach_1">The result is a visual identity that is modern and bold. Using a
-                        color palette reminiscent of
-                        night, hypnosis, and dreams to instantly convey the theme.</p>
+                        <h2 data-i18n="p_approach">Approche Créative & Technique</h2>
+                        <p data-i18n="p_hypnose_approach_1">
+                            Élaboration d'une palette mystérieuse et moderne (tons nocturnes et dorés), typographies impactantes et déclinaison sur affiches, réseaux sociaux et billets.
+                        </p>
+                    </div>
 
-                    <h2 data-i18n="p_tools">Equipment / Skills Used</h2>
-                    <p class="tech-stack" data-i18n="p_hypnose_tools_1"><strong>Software:</strong> Adobe Photoshop,
-                        Adobe Illustrator</p>
+                    <div class="project-sidebar">
+                        <div class="sidebar-block">
+                            <h3 data-i18n="p_tools">Outils & Technologies</h3>
+                            <div class="tech-stack-pills" style="margin-top: 0.5rem;">
+                                <span class="tech-pill">Photoshop</span>
+                                <span class="tech-pill">Illustrator</span>
+                                <span class="tech-pill">Direction Artistique</span>
+                            </div>
+                        </div>
 
-                    <h2 data-i18n="p_resources">Data Resources</h2>
-                    <p data-i18n="p_hypnose_resources_1">Access all project files and deliverables on the Drive.</p>
-                    <a href="https://drive.google.com/drive/folders/1QUyTnsNlbGt9PZnmZIM2adnVZ34ZBbhN" target="_blank"
-                        class="cta-button" data-i18n="p_view_drive">ACCESS DRIVE DATABASE</a>
+                        <div class="sidebar-block">
+                            <h3 data-i18n="p_resources">Fichiers & Livrables</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;" data-i18n="p_hypnose_resources_1">
+                                Accédez à l'ensemble des livrables graphiques sur le Drive.
+                            </p>
+                            <a href="https://drive.google.com/drive/folders/170J8F6_57vMv5X7Uf3h_Jm8_7h57h67_?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: 100%; justify-content: center; font-size: 0.78rem;" data-i18n="p_view_drive">
+                                Accéder au dossier Drive <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="mailto:alexiscarpentier62@gmail.com">Email</a>
-                <a href="https://instagram.com/crpt.alexis" target="_blank">Instagram</a>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo">XiEl<span class="accent-text">.</span></div>
+                <div class="footer-copyright">&copy; 2026 Alexis Carpentier — Tous droits réservés.</div>
             </div>
-            <p>&copy; 2026 Alexis. SYSTEM ONLINE.</p>
+
+            <div class="footer-socials">
+                <a href="mailto:alexiscarpentier62@gmail.com" class="footer-social-link"><i class="fa-solid fa-envelope"></i> Email</a>
+                <a href="https://instagram.com/crpt.alexis" target="_blank" rel="noopener noreferrer" class="footer-social-link"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                <a href="https://drive.google.com/drive/folders/1_y956-n0lu6Cf3o4KRdbzAObhT7Ay_kQ?usp=sharing" target="_blank" rel="noopener noreferrer" class="footer-social-link"><i class="fa-brands fa-google-drive"></i> Drive</a>
+            </div>
         </div>
     </footer>
 
-    <script src="../script.js"></script>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Retour en haut" aria-label="Retour en haut de page">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="../script.js?v=2.1"></script>
 </body>
 
 </html>
