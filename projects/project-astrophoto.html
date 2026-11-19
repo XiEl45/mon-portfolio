@@ -1,144 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Série Astrophotographie — Alexis Carpentier</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="../styles.css?v=2.1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Astrophotographie — Alexis Carpentier</title>
+<meta name="title-en" content="Astrophotography — Alexis Carpentier">
+<meta name="description" content="Série d’astrophotographie : ciels nocturnes et poses longues.">
+<meta property="og:title" content="Astrophotographie — Alexis Carpentier">
+<meta property="og:description" content="Série d’astrophotographie : ciels nocturnes et poses longues.">
+<meta property="og:image" content="https://alexiscarpentier.com/images/clip-loop-poster.jpg">
+<meta name="theme-color" content="#141414">
+<link rel="icon" href="../images/Logo_emblematique-03.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Archivo:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../styles.css?v=3.2">
+<script>document.documentElement.classList.add('js');try{if(sessionStorage.getItem('curtain')){document.documentElement.classList.add('cover')}}catch(e){}</script>
 </head>
+<body class="dark">
+<a class="skip" href="#main" data-en="Aller au contenu">Aller au contenu</a>
+<header class="hdr cap">
+  <a class="logo" href="../index.html" aria-label="Alexis Carpentier, accueil" data-en-label="Alexis Carpentier, home">Alexis</a>
+  <span></span>
+  <nav class="nav" aria-label="Navigation principale" data-en-label="Main navigation">
+    <a href="../index.html" data-en="Projects">Projets</a>
+    <a href="../about.html" data-en="About">À propos</a>
+    <a href="../index.html#contact" data-en="Contact">Contact</a>
+    <button class="lang" type="button">EN</button>
+  </nav>
+</header>
 
-<body>
-    <!-- Header Navigation -->
-    <header>
-        <nav class="navbar">
-            <div class="brand-wrapper">
-                <a href="../index.html" class="logo">Alexis<span class="logo-dot">.</span></a>
-                <div class="brand-meta">
-                    <span>POST-PROD & MOTION</span>
-                    <span class="status-live"><span class="rec-dot"></span><span data-i18n="nav_status_live">AVAILABLE FOR WORK</span></span>
-                </div>
-            </div>
-
-            <ul class="nav-links">
-                <li><a href="../index.html" data-i18n="nav_home">Accueil</a></li>
-                <li><a href="../projects.html" class="active" data-i18n="nav_projects">Projets</a></li>
-                <li><a href="../expertise.html" data-i18n="nav_expertise">Expertise</a></li>
-                <li><a href="../about.html" data-i18n="nav_about">À Propos</a></li>
-                <li><a href="../contact.html" data-i18n="nav_contact">Contact</a></li>
-            </ul>
-
-            <div class="nav-actions">
-                <button id="lang-toggle" class="lang-btn" aria-label="Changer de langue">
-                    <i class="fa-solid fa-globe"></i> <span>EN</span>
-                </button>
-                <button class="hamburger" aria-label="Menu mobile">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <section class="project-detail-section">
-            <div class="container">
-                <a href="../projects.html" class="project-detail-back" data-i18n="back_projects">
-                    <i class="fa-solid fa-arrow-left"></i> RETOUR AUX PROJETS
-                </a>
-
-                <div class="project-hero-header">
-                    <h1 data-i18n="h1_astrophoto">Série Photo — Astrophotographie</h1>
-                    <div class="project-meta-grid">
-                        <div class="meta-block">
-                            <span class="meta-label" data-i18n="meta_cat">Catégorie</span>
-                            <span class="meta-value" data-i18n="val_photo">Photographie</span>
-                        </div>
-                        <div class="meta-block">
-                            <span class="meta-label" data-i18n="meta_year">Année</span>
-                            <span class="meta-value">2026</span>
-                        </div>
-                        <div class="meta-block">
-                            <span class="meta-label" data-i18n="meta_role">Rôle</span>
-                            <span class="meta-value" data-i18n="val_photographer">Photographe</span>
-                        </div>
-                        <div class="meta-block">
-                            <span class="meta-label">Technique</span>
-                            <span class="meta-value">Pose Longue & Night Sky</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-media-main" style="padding: 2rem; background: var(--bg-surface); text-align: center;">
-                    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">
-                        [ GALERIE DISPONIBLE SUR GOOGLE DRIVE ]
-                    </p>
-                </div>
-
-                <div class="project-content-layout">
-                    <div class="project-article">
-                        <h2 data-i18n="p_the_project">Le Projet</h2>
-                        <p data-i18n="p_astrophoto_desc_1">
-                            Série photographique dédiée aux ciels nocturnes, aux constellations et aux paysages sous les étoiles.
-                        </p>
-
-                        <h2 data-i18n="p_approach">Approche Créative & Technique</h2>
-                        <p data-i18n="p_astrophoto_approach_1">
-                            Prises de vue en pose longue sur trépied, mise au point manuelle à l'infini et développement numérique avec gestion fine du bruit.
-                        </p>
-                    </div>
-
-                    <div class="project-sidebar">
-                        <div class="sidebar-block">
-                            <h3 data-i18n="p_tools">Outils & Technologies</h3>
-                            <div class="tech-stack-pills" style="margin-top: 0.5rem;">
-                                <span class="tech-pill">Sony a6400</span>
-                                <span class="tech-pill">Trépied</span>
-                                <span class="tech-pill">Adobe Lightroom</span>
-                            </div>
-                        </div>
-
-                        <div class="sidebar-block">
-                            <h3 data-i18n="p_resources">Fichiers & Livrables</h3>
-                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;" data-i18n="p_astrophoto_resources_1">
-                                Accédez aux fichiers sur le Drive.
-                            </p>
-                            <a href="https://drive.google.com/drive/folders/1_y956-n0lu6Cf3o4KRdbzAObhT7Ay_kQ?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: 100%; justify-content: center; font-size: 0.78rem;" data-i18n="p_view_drive">
-                                Accéder au dossier Drive <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-inner">
-            <div class="footer-brand">
-                <div class="footer-logo">Alexis<span class="accent-text">.</span></div>
-                <div class="footer-copyright">&copy; 2026 Alexis Carpentier — Tous droits réservés.</div>
-            </div>
-
-            <div class="footer-socials">
-                <a href="mailto:alexiscarpentier62@gmail.com" class="footer-social-link"><i class="fa-solid fa-envelope"></i> Email</a>
-                <a href="https://instagram.com/crpt.alexis" target="_blank" rel="noopener noreferrer" class="footer-social-link"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                <a href="https://drive.google.com/drive/folders/1_y956-n0lu6Cf3o4KRdbzAObhT7Ay_kQ?usp=sharing" target="_blank" rel="noopener noreferrer" class="footer-social-link"><i class="fa-brands fa-google-drive"></i> Drive</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <button id="back-to-top" title="Retour en haut" aria-label="Retour en haut de page">
-        <i class="fa-solid fa-arrow-up"></i>
-    </button>
-
-    <script src="../script.js?v=2.1"></script>
+<main id="main" class="about">
+  <div class="ahead">
+    <h1><span><em data-en="Astro">Astro</em></span><span><em data-en="photography">photographie</em></span></h1>
+    <p class="side cap" data-en="Photography · 2026">Photographie · 2026</p>
+  </div>
+  <div class="agrid">
+    <div class="acopy" style="grid-column:1 / span 8">
+      <p class="lede" data-en="A series on night skies, constellations and landscapes under the stars.">Une série sur les ciels nocturnes, les constellations et les paysages sous les étoiles.</p>
+      <p data-en="Long exposures on a tripod, manual focus at infinity and a careful noise-aware development. The photos are on the Drive.">Poses longues sur trépied, mise au point manuelle à l’infini et développement attentif au bruit. Les photos sont sur le Drive.</p>
+      <dl class="ainfo"><div><dt class="cap" data-en="Tools">Outils</dt><dd>Sony a6400 · Lightroom</dd></div><div><dt class="cap" data-en="Year">Année</dt><dd>2026</dd></div></dl>
+      <div class="acta cap"><a class="btn solid" href="https://drive.google.com/drive/folders/1_y956-n0lu6Cf3o4KRdbzAObhT7Ay_kQ?usp=sharing" target="_blank" rel="noopener"><span data-en="Open the Drive folder">Ouvrir le dossier Drive</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M6 3h7v7M13 3 3 13"/></svg></a><a class="btn" href="../index.html" data-en="Back to the projects">Retour aux projets</a></div>
+    </div>
+  </div>
+</main>
+<div style="height:120px"></div>
+<footer class="ftr cap ">
+  <span>© 2026 Alexis Carpentier</span>
+  <span data-en="Lens / Lille — remote across France">Lens / Lille — remote partout en France</span>
+  <nav aria-label="Liens" data-en-label="Links"><a href="mailto:alexiscarpentier62@gmail.com">Email</a><a href="https://instagram.com/crpt.alexis" rel="noopener">Instagram</a><a href="../CV.pdf" download data-en="Resume">CV</a><a href="https://drive.google.com/drive/folders/1_y956-n0lu6Cf3o4KRdbzAObhT7Ay_kQ?usp=sharing" rel="noopener">Drive</a></nav>
+</footer>
+<div class="curtain" aria-hidden="true"></div>
+<script src="../script.js?v=3.2" defer></script>
 </body>
-
 </html>
