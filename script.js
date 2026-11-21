@@ -117,32 +117,69 @@ P.forEach((p, i) => {
   b.className = 'slice';
   const colour = p.video ? loopVideo(p, 'c') : `<img class="c" src="${p.cover}" alt="" decoding="async">`;
   b.innerHTML = `<span class="in"><img class="g" src="${p.video ? p.poster : p.cover}" alt="" decoding="async">${colour}</span>`;
-  b.addEventListener('mouseenter', () => { hovered = i; show(i); wake(); });
-  b.addEventListener('mouseleave', () => { hovered = null; wake(); });
+  /* a slice sliding under a still cursor is not a hover: only count it when the strip is at rest
+     and the mouse really moves over it */
+  const enter = () => { if (stripMoving || hovered === i) return; hovered = i; show(i); wake(); };
+  b.addEventListener('mouseenter', enter);
+  b.addEventListener('mousemove', enter);
+  b.addEventListener('mouseleave', () => { if (hovered === i) { hovered = null; wake(); } });
   b.addEventListener('focus', () => { show(i); if (!mq.matches && b.matches(':focus-visible')) { scrollTo(0, scrollFor(i * STEP)); wake(); } });
   b.addEventListener('click', () => openView(i));
   track.append(b);
   S.push({ el: b, in: b.firstElementChild, c: b.querySelector('.c'), p: i });
 });
 const slices = S.map(o => o.el);
-let hovered = null, shown = -1, active = 0;
+let hovered = null, shown = -1, active = 0, stripMoving = false;
 function labels() { slices.forEach((b, i) => { const p = P[i]; b.setAttribute('aria-label', `${p.t} — ${tr(p.type, p.typeEn)}, ${p.y}`); }); }
 labels();
 
 function show(i, force) {
-  if (i === shown && !force) return; shown = i; const p = P[i];
-  const big = $('#big'); big.classList.remove('in'); big.innerHTML = letters(p.t);
+  if (i === shown && !force && !hidden) return; shown = i; hidden = false; const p = P[i];
+  clearTimeout(infoTimer); infoTimer = null;
+  const big = $('#big'); big.classList.remove('in', 'out'); big.innerHTML = letters(p.t);
   requestAnimationFrame(() => requestAnimationFrame(() => big.classList.add('in')));
-  const pi = $('#pinfo'); pi.classList.remove('in');
-  clearTimeout(pi._t); pi._t = setTimeout(() => {
-    $('#iN').textContent = `${pad(i + 1)} / ${pad(P.length)}`; $('#iT').textContent = p.t;
-    $('#iType').textContent = tr(p.type, p.typeEn); $('#iRole').textContent = tr(p.role, p.roleEn); $('#iY').textContent = p.y;
-    pi.classList.add('in');
-  }, still ? 0 : 160);
+  infoTo(i);
   mark(i);
 }
+/* The info row never changes in plain sight. The first time it rolls in; after that, a light bar
+   sweeps over each value from the left, the words are swapped while they are covered, and the bar
+   leaves to the right. Changes asked for mid-sweep wait for it to finish, then take the latest. */
+let filled = -1, sweeping = false, wanted = -1;
+const COVER = 240, STAGGER = 30;
+function fillInfo(i) {
+  const p = P[i]; filled = i;
+  $('#iN').textContent = `${pad(i + 1)} / ${pad(P.length)}`; $('#iT').textContent = p.t;
+  $('#iType').textContent = tr(p.type, p.typeEn); $('#iRole').textContent = tr(p.role, p.roleEn); $('#iY').textContent = p.y;
+}
+function infoTo(i, force) {
+  const pi = $('#pinfo');
+  if (!pi.classList.contains('in')) { fillInfo(i); clearTimeout(pi._t); pi._t = setTimeout(() => pi.classList.add('in'), still ? 0 : 160); return; }
+  if (still) { fillInfo(i); return; }
+  if (sweeping) { wanted = i; return; }
+  if (i === filled && !force) return;
+  sweeping = true; wanted = -1;
+  pi.classList.add('wipe');
+  const covered = COVER + STAGGER * 4;
+  setTimeout(() => {
+    fillInfo(wanted >= 0 ? wanted : i); wanted = -1;
+    pi.classList.remove('wipe');
+    setTimeout(() => { sweeping = false; if (wanted >= 0 && wanted !== filled) infoTo(wanted); }, covered);
+  }, covered + 20);
+}
+/* While the strip is moving, the giant title steps aside (a soft fade) instead of following every
+   project that flies past; once a project settles in the middle it rises back in. */
+let hidden = false, infoTimer = null;
+function hideInfo() {
+  if (hidden) return; hidden = true;
+  $('#big').classList.add('out');
+}
+function settleInfo(moving) {
+  if (hovered !== null) return;
+  if (moving) { clearTimeout(infoTimer); infoTimer = null; if (active !== shown) hideInfo(); return; }
+  if (!infoTimer && (hidden || active !== shown)) infoTimer = setTimeout(() => { infoTimer = null; if (hovered === null) show(active, true); }, still ? 0 : 120);
+}
 $$('#pinfo > div, .vmeta > div').forEach(d => d.style.setProperty('--i', [...d.parentNode.children].indexOf(d)));
-document.addEventListener('langchange', () => { labels(); show(shown < 0 ? 0 : shown, true); });
+document.addEventListener('langchange', () => { labels(); show(shown < 0 ? 0 : shown, true); infoTo(shown < 0 ? 0 : shown, true); });
 
 /* Geometry. Vertical scroll moves the page; horizontal input (trackpad swipe, shift+wheel, drag,
    arrows) moves the strip. Nothing snaps: speed alone makes the slices near the centre swell,
@@ -207,7 +244,7 @@ function step(now) {
     const cx = sx + j * STEP + W / 2, d = (cx - mid) / mid, ad = Math.abs(cx - mid);
     if (ad < bd) { bd = ad; best = j; }
     const bell = Math.exp(-d * d * 2.4), dc = Math.max(-1, Math.min(1, d));
-    const sc = 1 + amp * .18 * bell, sy = 1 + amp * .42 * bell, rot = amp * 26 * dc, push = amp * W * .55 * dc * bell;
+    const sc = 1 + amp * .14 * bell, sy = 1 + amp * .3 * bell, rot = amp * 26 * dc, push = amp * W * .55 * dc * bell;
     const t = `translate3d(${(cx - W / 2 + push).toFixed(1)}px,0,0) rotateY(${rot.toFixed(2)}deg) scale(${sc.toFixed(4)},${(sc * sy).toFixed(4)})`;
     const ti = `scaleY(${(1 / sy).toFixed(4)})`;
     const o = Math.round(Math.max(hv[j], Math.min(1, amp * 1.4) * bell) * 100) / 100;
@@ -216,8 +253,10 @@ function step(now) {
     if (ti !== pv.i) { S[j].in.style.transform = ti; pv.i = ti; }
     if (o !== pv.o) { S[j].c.style.opacity = o; pv.o = o; }
   }
-  active = S[best].p;
-  if (hovered === null) show(active);
+  if (S[best].p !== active) { active = S[best].p; mark(active); if (hovered === null) infoTo(active); }
+  stripMoving = v > 1;
+  if (stripMoving && hovered !== null) hovered = null;
+  settleInfo(stripMoving);
 }
 function frame(now) {
   requestAnimationFrame(frame);
@@ -230,7 +269,8 @@ function frame(now) {
 function syncSwipe() {
   if (!mq.matches) return; const c = innerWidth / 2; let best = 0, d = 1e9;
   slices.forEach((s, j) => { const r = s.getBoundingClientRect(), m = Math.abs(r.left + r.width / 2 - c); if (m < d) { d = m; best = j; } });
-  active = best; show(best);
+  if (best !== active) { active = best; mark(best); infoTo(best); }
+  settleInfo(true); clearTimeout(syncSwipe.t); syncSwipe.t = setTimeout(() => settleInfo(false), 140);
 }
 track.addEventListener('scroll', syncSwipe, { passive: true });
 mq.addEventListener('change', () => { shown = -1; sizeHome(); syncSwipe(); });
@@ -285,7 +325,7 @@ function openView(i) {
 /* coming back from a project with "Fermer": start opened, then fly the image back into the strip */
 function returnFrom(slug) {
   const i = P.findIndex(p => p.slug === slug); if (i < 0) return;
-  sx = null; amp = 0; show(i, true);
+  sx = null; amp = 0; active = i; show(i, true);
   if (mq.matches) { slices[i].scrollIntoView({ inline: 'center', block: 'nearest' }); return; }
   scrollTo({ top: scrollFor(i * STEP), behavior: 'instant' });
   step(performance.now());

@@ -55,19 +55,26 @@ body.dragging{cursor:grabbing;user-select:none}
 .slice .c{opacity:0}
 .ghost{position:fixed;z-index:55;overflow:hidden;pointer-events:none;background:#000}
 .ghost img{width:100%;height:100%;object-fit:cover}
-.big{position:absolute;left:var(--gut);right:var(--gut);top:50%;transform:translateY(-50%);display:flex;justify-content:space-between;font-family:var(--display);font-size:min(30vh,20vw);line-height:.8;text-transform:uppercase;color:#e9e6df;mix-blend-mode:difference;pointer-events:none;z-index:3;transition:opacity .5s}
+.big{position:absolute;left:var(--gut);right:var(--gut);top:50%;transform:translateY(-50%);display:flex;justify-content:space-between;font-family:var(--display);font-size:min(30vh,20vw);line-height:.8;text-transform:uppercase;color:#e9e6df;mix-blend-mode:difference;pointer-events:none;z-index:3;transition:opacity .6s var(--ease)}
 .home.away .big,.home.away .pinfo,.home.away .who,.home.away .hint{opacity:0;transition:opacity .4s}
 .big span{display:block;overflow:hidden;padding-top:.04em}
 .big em{display:block;font-style:normal;transform:translateY(102%);transition:transform .9s var(--ease)}
 .big.in em{transform:none}
 .who{position:absolute;left:var(--gut);top:92px;max-width:340px;font-size:15px;font-weight:600;line-height:1.35;z-index:4}
 .who small{display:block;color:var(--mute);font-weight:400;font-size:14px;margin-top:4px}
-.pinfo{position:absolute;left:50%;top:calc(50% + var(--H,420px) / 2 + 44px);transform:translateX(-50%);display:flex;gap:40px;white-space:nowrap;z-index:4}
+.pinfo{position:absolute;left:50%;top:calc(50% + var(--H,420px) / 2 + 60px);transform:translateX(-50%);display:grid;grid-template-columns:64px 150px 170px 270px 56px;column-gap:28px;white-space:nowrap;z-index:4;transition:opacity .6s var(--ease)}
 .pinfo div{overflow:hidden}
+.pinfo dd{overflow:hidden;text-overflow:ellipsis}
 .pinfo dt,.pinfo dd{display:block;transform:translateY(110%);transition:transform .7s var(--ease) calc(var(--i,0) * 60ms)}
 .pinfo dt{color:var(--mute)}
 .pinfo dd{transition-delay:calc(var(--i,0) * 60ms + 80ms)}
 .pinfo.in dt,.pinfo.in dd{transform:none}
+/* while the strip moves, the info fades out quickly; it re-enters once a project settles */
+.big.out{opacity:0;transition:opacity .35s ease-out}
+/* the sweep that hides each value while it changes: grows from the left, leaves to the right */
+.pinfo dd{position:relative}
+.pinfo dd::after{content:"";position:absolute;inset:0;background:var(--text);transform:scaleX(0);transform-origin:right center;transition:transform .24s var(--io) calc(var(--i,0) * 30ms)}
+.pinfo.wipe dd::after{transform:scaleX(1);transform-origin:left center}
 .hint{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);color:var(--mute);white-space:nowrap}
 
 /* ---------- an opened project (overlay on the home, hero on a project page) ---------- */
@@ -193,6 +200,7 @@ body.leaving .curtain{transform:none;transition:transform .7s var(--io)}
 
 /* ---------- small screens ---------- */
 @media (max-width:1000px){
+  .pinfo{grid-template-columns:56px 120px 140px 210px 48px;column-gap:18px}
   .ruler{display:none}
   .pintro h2,.pintro .lede,.pintro .lede + p,.facts,.credits{grid-column:1 / -1}
   .drive p,.drive .row{grid-column:1 / -1;justify-self:start}

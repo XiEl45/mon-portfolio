@@ -6,7 +6,7 @@ header, footer and project layout. Run from the project root:  python3 .impeccab
 """
 import html, json, os
 
-V = '3.2'
+V = '4.3'
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MAIL = 'alexiscarpentier62@gmail.com'
 INSTA = 'https://instagram.com/crpt.alexis'

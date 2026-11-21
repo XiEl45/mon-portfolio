@@ -15,7 +15,7 @@ function initGL(){
   if(!window.THREE||still)return null;
   const T=THREE,low=mq.matches||innerWidth<900;
   let R;try{R=new T.WebGLRenderer({canvas:glCanvas,antialias:true,powerPreference:'high-performance'})}catch(e){return null}
-  R.setPixelRatio(Math.min(devicePixelRatio,low?1.3:1.75));
+  const DPR_MAX=Math.min(devicePixelRatio,low?1.25:1.5);let dpr=DPR_MAX;R.setPixelRatio(dpr);
   R.outputEncoding=T.sRGBEncoding;R.toneMapping=T.ACESFilmicToneMapping;R.toneMappingExposure=1.2;
   const scene=new T.Scene(),FOG=new T.Color(0x0a0c11);
   scene.background=FOG;scene.fog=new T.FogExp2(FOG,.018);
@@ -49,7 +49,7 @@ function initGL(){
    const st=new T.Points(g,new T.PointsMaterial({color:0xcfd6e2,size:1.3,sizeAttenuation:false,transparent:true,opacity:.55,fog:false,depthWrite:false}));sky.add(st)}
 
   /* ---------- terrain ---------- */
-  const seg=low?160:300,geo=new T.PlaneGeometry(340,340,seg,seg);geo.rotateX(-Math.PI/2);geo.translate(0,0,-60);
+  const seg=low?140:230,geo=new T.PlaneGeometry(340,340,seg,seg);geo.rotateX(-Math.PI/2);geo.translate(0,0,-60);
   const pos=geo.attributes.position;
   for(let i=0;i<pos.count;i++)pos.setY(i,Hs(pos.getX(i),pos.getZ(i)));
   geo.computeVertexNormals();
@@ -64,7 +64,7 @@ function initGL(){
   geo.setAttribute('color',new T.BufferAttribute(col,3));
   scene.add(new T.Mesh(geo,new T.MeshStandardMaterial({vertexColors:true,roughness:.92,metalness:0})));
   /* distant range, for silhouettes against the sky */
-  {const g=new T.PlaneGeometry(900,260,220,60);g.rotateX(-Math.PI/2);g.translate(0,0,-330);const p=g.attributes.position;
+  {const g=new T.PlaneGeometry(900,260,150,40);g.rotateX(-Math.PI/2);g.translate(0,0,-330);const p=g.attributes.position;
    for(let i=0;i<p.count;i++){const x=p.getX(i),z=p.getZ(i);p.setY(i,ridged(x*.008+1,z*.012+5)*95-30)}
    g.computeVertexNormals();scene.add(new T.Mesh(g,new T.MeshStandardMaterial({color:0x101319,roughness:1})))}
 
@@ -78,7 +78,7 @@ function initGL(){
     g.addColorStop(0,'rgba(255,255,255,1)');g.addColorStop(.35,'rgba(255,255,255,.6)');g.addColorStop(1,'rgba(255,255,255,0)');x.fillStyle=g;x.fillRect(0,0,64,64);return new T.CanvasTexture(cv)})();
 
   /* ---------- concert beams: soft halo + bright core, with dust drifting through ---------- */
-  const NOISE='float h1(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}float n2(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h1(i),h1(i+vec2(1,0)),f.x),mix(h1(i+vec2(0,1)),h1(i+vec2(1,1)),f.x),f.y);}float fb(vec2 p){float s=0.,a=.5;for(int i=0;i<5;i++){s+=a*n2(p);p*=2.03;a*=.5;}return s;}';
+  const NOISE='float h1(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}float n2(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h1(i),h1(i+vec2(1,0)),f.x),mix(h1(i+vec2(0,1)),h1(i+vec2(1,1)),f.x),f.y);}float fb(vec2 p){float s=0.,a=.5;for(int i=0;i<4;i++){s+=a*n2(p);p*=2.03;a*=.5;}return s;}';
   const beamMat=(pw,k)=>new T.ShaderMaterial({transparent:true,depthWrite:false,blending:T.AdditiveBlending,side:T.DoubleSide,
     uniforms:{uI:{value:0},uT:{value:0},uC:{value:new T.Color(0xf3ecdc)}},
     vertexShader:'varying vec2 vU;varying vec3 vN;varying vec3 vV;void main(){vU=uv;vec4 mv=modelViewMatrix*vec4(position,1.);vN=normalize(normalMatrix*normal);vV=normalize(-mv.xyz);gl_Position=projectionMatrix*mv;}',
@@ -147,7 +147,7 @@ function initGL(){
   put(cyl(.33,.33,.04),metal,0,-.02,0,0,0,0,L);
   put(cyl(.3,.31,.12),body,0,-.1,0,0,0,0,L);
   const rib=put(cyl(.315,.315,.14,96),rub,0,-.23,0,0,0,0,L);
-  for(let k=0;k<48;k++){const a=k/48*Math.PI*2;put(new T.BoxGeometry(.012,.13,.01),rub,Math.cos(a)*.318,-.23,Math.sin(a)*.318,0,-a,0,L)}
+  const ribG=new T.BoxGeometry(.012,.13,.01);for(let k=0;k<48;k++){const a=k/48*Math.PI*2;put(ribG,rub,Math.cos(a)*.318,-.23,Math.sin(a)*.318,0,-a,0,L)}
   put(cyl(.29,.3,.12),body,0,-.36,0,0,0,0,L);
   put(cyl(.3,.29,.025),metal,0,-.43,0,0,0,0,L);
   const gl3=new T.SphereGeometry(.26,48,16,0,Math.PI*2,0,.55);put(gl3,glass,0,-.4,0,Math.PI,0,0,L).scale.set(1,.35,1);
@@ -199,7 +199,10 @@ function initGL(){
     cam.fov=w/h<1?62:45;cam.aspect=w/h;cam.updateProjectionMatrix();buildPaths()}
   size();addEventListener('resize',size);
   let time=0;const tmp=new T.Vector3();
+  /* if frames get slow, render at a lower resolution rather than stutter */
+  let ema=16,frames=0;
   function render(p,dt){
+    ema+=(dt-ema)*.08;if(++frames>45&&ema>21&&dpr>1){dpr=Math.max(1,dpr-.25);R.setPixelRatio(dpr);size();frames=0}
     time+=dt/1000;
     const q=p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;
     cam.position.copy(pathCam.getPointAt(q));
@@ -216,30 +219,90 @@ function initGL(){
     const a=sGeo.attributes.position.array;for(let i=0,j=0;i<a.length;i+=3,j++){a[i+1]-=dt*.0016*sv[j];a[i]+=Math.sin(time*.6+j)*.002;if(a[i+1]<-5)a[i+1]+=85}sGeo.attributes.position.needsUpdate=true;
     R.render(scene,cam);
   }
+  /* compile every shader now, so the first visible frame does not freeze the scroll */
+  R.compile(scene,cam);render(0,16);
   return {render};
 }
-/* the journey plays by itself, like a film: once the section reaches the screen, the page settles on
-   it and the camera climbs on its own; leave the section and it rewinds for the next visit */
-const TRAVEL=still?0:11000;
-let jk=0,playing=false,done=false,settled=false,glide=null;
-addEventListener('wheel',()=>{glide=null},{passive:true});addEventListener('touchstart',()=>{glide=null},{passive:true});
-function journeySkip(){jk=1;playing=false;done=true;settled=true;glide=null}
+/* The journey plays by itself, like a film, and the section holds on to the scroll:
+   - as soon as it takes up most of the screen, the page glides to fill the screen with it (scrolling
+     during that glide is absorbed, so it always lands exactly);
+   - while it is on screen, the wheel / trackpad / finger drive the camera (forward or back) and never
+     move the page; the film picks up on its own a moment after the visitor lets go;
+   - at either end, leaving takes a deliberate push (one firm scroll), not an accidental notch.
+   Leave the section and it rewinds for the next visit. */
+const TRAVEL=still?0:11000, HAND=1300, PUSH=420, TOUCH_PUSH=110;
+let jk=0,jkT=0,playing=false,settled=false,glide=null,handUntil=0,ty=null;
+let esc={dir:0,amt:0,t:0},released=0,quietUntil=0; /* released: direction (+1 down, -1 up) the page may scroll in */
+const maxY=()=>document.documentElement.scrollHeight-innerHeight;
+const zone=()=>{const r=journey.getBoundingClientRect();return r.top<innerHeight*.8&&r.bottom>innerHeight*.4};
+/* a glide continues the visitor's own movement: it starts at speed and settles softly (ease-out),
+   timed on the clock (not on frame counts) so a dropped frame never makes it stutter */
+function glideTo(to,after){const d=Math.abs(to-scrollY);glide={from:scrollY,to,start:performance.now(),dur:still?0:Math.min(1500,750+d*.9),after}}
+function settle(){const r=journey.getBoundingClientRect();if(Math.abs(r.top)>4&&!glide){glideTo(journey.offsetTop)}settled=true;if(jkT<1)playing=true}
+/* leaving is a glide too: up lands on the last project, down on the footer; inputs during the glide
+   (and the tail of a trackpad fling right after it) are absorbed so nothing jolts */
+function leave(dir){
+  glideTo(dir<0?Math.max(0,journey.offsetTop-innerHeight):maxY(),()=>{released=dir;quietUntil=performance.now()+420});
+}
+/* one input of size d (in journey units, > 0 forward) and raw pixels px; returns true to block the page */
+function input(d,px,push){
+  if(still)return false;
+  const dir=Math.sign(d)||0;
+  if(released){if(dir===released)return false;released=0}
+  if(!zone())return false;
+  if(glide)return true;
+  const r=journey.getBoundingClientRect();
+  if(Math.abs(r.top)>4){settle();return true}
+  const now=performance.now();
+  if((d>0&&jkT>=1)||(d<0&&jkT<=0)){
+    if(esc.dir!==dir||now-esc.t>450)esc={dir,amt:0,t:now};
+    esc.amt+=Math.abs(px);esc.t=now;
+    if(esc.amt>push){esc={dir:0,amt:0,t:0};leave(dir);return true}
+    return true;
+  }
+  esc={dir:0,amt:0,t:0};
+  jkT=Math.max(0,Math.min(1,jkT+d));playing=true;handUntil=now+HAND;return true;
+}
+addEventListener('wheel',e=>{
+  if(e.ctrlKey)return;
+  if(glide||performance.now()<quietUntil){e.preventDefault();return}
+  const u=e.deltaMode===1?40:e.deltaMode===2?innerHeight:1,px=e.deltaY*u;
+  if(input(px/2600,px,PUSH))e.preventDefault();
+},{passive:false});
+addEventListener('touchstart',e=>{ty=e.touches[0].clientY},{passive:true});
+addEventListener('touchmove',e=>{
+  if(ty===null)return;const y=e.touches[0].clientY,d=ty-y;ty=y;
+  if(glide||performance.now()<quietUntil){e.preventDefault();return}
+  if(input(d/1500,d,TOUCH_PUSH))e.preventDefault();
+},{passive:false});
+addEventListener('touchend',()=>{ty=null},{passive:true});
+addEventListener('keydown',e=>{
+  if(!zone()||e.target.closest('input,textarea,a,button'))return;
+  const k={ArrowDown:1,PageDown:1,' ':1,ArrowUp:-1,PageUp:-1}[e.key];if(!k)return;
+  if(input(k*.08,k*PUSH*.6,PUSH))e.preventDefault();
+});
+function journeySkip(){jk=jkT=1;playing=false;settled=true;glide=null;released=0}
 function journeyStep(dt){
   const r=journey.getBoundingClientRect();
   if(!glTried&&r.top<innerHeight*2.5)gl=initGL();
-  if(r.top>innerHeight*.98){jk=0;playing=false;done=false;settled=false}
+  if(r.top>innerHeight*.98){jk=jkT=0;playing=false;settled=false}
+  if(!zone()){released=0}
+  /* glide the page (in or out); runs even while the section slides off screen */
+  if(glide){const g=glide,t=g.dur?Math.min(1,(performance.now()-g.start)/g.dur):1,e=1-Math.pow(1-t,3.2);scrollTo(0,g.from+(g.to-g.from)*e);if(t>=1){glide=null;if(g.after)g.after()}}
   if(r.bottom<0||r.top>innerHeight)return;
-  if(!playing&&!done&&r.top<innerHeight*.55){
-    playing=true;
-    if(!settled&&Math.abs(r.top)>2){settled=true;glide={from:scrollY,to:journey.offsetTop,t:0}}
-  }
-  /* settle the page on the section with an eased glide (cancelled if the visitor scrolls) */
-  if(glide){glide.t=still?1:Math.min(1,glide.t+dt/1100);const e=1-Math.pow(1-glide.t,4);scrollTo(0,glide.from+(glide.to-glide.from)*e);if(glide.t>=1)glide=null}
-  if(playing){jk=TRAVEL?Math.min(1,jk+dt/TRAVEL):1;if(jk>=1){playing=false;done=true}}
+  /* first arrival: fill the screen and start the film */
+  if(!settled&&!released&&r.top<innerHeight*.55&&r.bottom>innerHeight*.45)settle();
+  /* the film runs unless the visitor's hand is on it */
+  if(playing&&performance.now()>handUntil){jkT=TRAVEL?Math.min(1,jkT+dt/TRAVEL):1}
+  if(jkT>=1)playing=false;
+  jk+=(jkT-jk)*(still?1:1-Math.pow(.86,dt/16.7));if(Math.abs(jkT-jk)<.0003)jk=jkT;
   if(gl)gl.render(jk,dt);
   const c=gl?smoothstep(.93,.995,jk):smoothstep(.6,.9,jk);ct.style.setProperty('--c',c.toFixed(3));ct.classList.toggle('live',c>.6);
   jt.style.setProperty('--t',(1-jk*5).toFixed(3));
 }
 window.journeySkip = journeySkip;
+function warmUp(){if(glTried)return;const t=performance.now();gl=initGL();window.__glBuildMs=Math.round(performance.now()-t)}
+const idle=window.requestIdleCallback||(f=>setTimeout(f,1));
+addEventListener('load',()=>setTimeout(()=>idle(warmUp,{timeout:2500}),900));
 window.journeyStep = journeyStep;
 })();
